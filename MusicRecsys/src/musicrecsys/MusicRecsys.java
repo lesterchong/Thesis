@@ -10,7 +10,7 @@ import javazoom.jlgui.player.amp.playlist.PlaylistItem;
 
 /**
  *
- * @author Arturo III
+ * @author Lester Chong
  */
 public class MusicRecsys {
 
@@ -18,13 +18,11 @@ public class MusicRecsys {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        Playlist pl = new BasePlaylist();
-        PlaylistItem pi = new PlaylistItem("Antukin", "D:\\Music\\OPM\\09 Antukin.mp3", 1, true);
-        pl.appendItem(pi);
-        pi = new PlaylistItem("Dianetic", "D:\\Music\\OPM\\12 Dianetic.mp3", 1, true);
-        pl.appendItem(pi);
-        pi = new PlaylistItem("Shooting Star", "D:\\Music\\OPM\\Hale - Shooting Star.mp3", 1, true);
-        pl.appendItem(pi);
-        pl.save("reco.m3u");
+        String string = "07/14/2014 19:49:25, 02 Magasin by Paolo Santos.mp3 MANUAL";
+        String token[];
+        
+        token = string.split("AUTOMATIC|MANUAL|,");
+        System.out.println(token[2]);
+        
     }
 }

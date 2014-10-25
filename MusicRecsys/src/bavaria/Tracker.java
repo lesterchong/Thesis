@@ -114,7 +114,7 @@ public class Tracker extends javax.swing.JFrame {
     {
         Date date = new Date();
         DateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-        TextLog.append(dateFormat.format(date)+" "+str+"\n");
+        TextLog.append(dateFormat.format(date)+", "+str+"\n");
     }
     /**
      * @param args the command line arguments
