@@ -140,7 +140,7 @@ public class UtilityMatrix {
                     temp.setSkipped(0);
                     updateMatrix(temp);
                 }else{
-                    temp.setPlayMethod(playMethodValue(line));
+                    temp.setPlayMethod(0.1+playMethodValue(line));
                     temp.setPlayedDay(1);
                     temp.setPlayedEver(1);
                     temp.setPlayedWeek(1);

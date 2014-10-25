@@ -22,3 +22,7 @@
 10/17/2014 10:56:55 Dianetic - Pupil MANUAL
 10/17/2014 10:56:57 Shooting Star MANUAL
 10/17/2014 10:57:03  ************** CLOSED PLAYER ***************** 
+10/25/2014 19:06:18,  ************** OPENED PLAYER ***************** 
+10/25/2014 19:06:59, Dianetic - Pupil, AUTOMATIC
+10/25/2014 19:07:09, Shooting Star, NEXT
+10/25/2014 19:07:12,  ************** CLOSED PLAYER ***************** 

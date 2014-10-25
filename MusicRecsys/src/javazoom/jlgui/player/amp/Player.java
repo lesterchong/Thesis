@@ -947,7 +947,7 @@ public class Player extends Window implements ActionListener, BasicPlayerListene
 	      currentPlaylistItem = rpli;
               isRepeat = true;
               String info = rpli.getName();
-              info += " AUTOMATIC";
+              info += ", AUTOMATIC";
               tFrame.addText(info);
             }
           }
@@ -1173,9 +1173,9 @@ public class Player extends Window implements ActionListener, BasicPlayerListene
                 {
                     String info = pli.getName();
                     if (config.isRepeatEnabled())
-                        info += " REPEAT";
+                        info += ", REPEAT";
                     else
-                        info += " AUTOMATIC";
+                        info += ", AUTOMATIC";
                     tFrame.addText(info);
                 }
 		this.setCurrentSong(pli);
@@ -1757,7 +1757,7 @@ public class Player extends Window implements ActionListener, BasicPlayerListene
       fileList.nextCursor();
       PlaylistItem pli = playlist.getCursor();
       String info = pli.getName();
-            info += " NEXT";
+            info += ", NEXT";
             if (tFrame != null)
              tFrame.addText(info);
              firstSong = false;
@@ -1774,7 +1774,7 @@ public class Player extends Window implements ActionListener, BasicPlayerListene
       fileList.nextCursor();
       PlaylistItem pli = playlist.getCursor();
       String info = pli.getName();
-            info += " PREVIOUS";
+            info += ", PREVIOUS";
             if (tFrame != null)
              tFrame.addText(info);
              firstSong = false;
