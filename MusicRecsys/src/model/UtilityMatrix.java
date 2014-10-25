@@ -11,7 +11,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -130,26 +132,36 @@ public class UtilityMatrix {
                 token = line.split("MANUAL|AUTOMATIC|REPEAT|SHUFFLE|,");
                 
                 temp.setName(token[1]);
+                temp.setPlayedDay(1);
+                temp.setDayPlayed(new Timestamp(System.currentTimeMillis()));
+                temp.setPlayedEver(1);
+                temp.setPlayedWeek(1);
                 
                 if(doesSongExist(temp)==true){    
                     temp = searchSong(temp);
                     temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
-                    temp.setPlayedDay(1);
-                    temp.setPlayedEver(1);
-                    temp.setPlayedWeek(1);
                     temp.setSkipped(0);
                     updateMatrix(temp);
                 }else{
                     temp.setPlayMethod(0.1+playMethodValue(line));
-                    temp.setPlayedDay(1);
-                    temp.setPlayedEver(1);
-                    temp.setPlayedWeek(1);
                     temp.setSkipped(0);
                     matrix.add(temp);
                 }
             }
         }catch(FileNotFoundException e){
             e.printStackTrace();
+        }
+    }
+    
+    public void refreshForTheDay(){
+        for(int ctr=0; ctr<matrix.size(); ctr++){
+            matrix.get(ctr).setPlayedDay(0);
+        }
+    }
+    
+    public void refreshForTheWeek(){
+        for(int ctr=0; ctr<matrix.size(); ctr++){
+            matrix.get(ctr).setPlayedWeek(0);
         }
     }
 }
