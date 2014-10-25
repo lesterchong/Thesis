@@ -6,11 +6,14 @@
 
 package model;
 
+import java.sql.Timestamp;
+
 /**
  *
  * @author Lester Chong
  */
 public class UtilityRow {
+    private Timestamp dayPlayed;
     private String name;
     private double playMethod;
     private int playedDay;
@@ -100,6 +103,20 @@ public class UtilityRow {
      */
     public void setSkipped(double skipped) {
         this.skipped = skipped;
+    }
+
+    /**
+     * @return the dayPlayed
+     */
+    public Timestamp getDayPlayed() {
+        return dayPlayed;
+    }
+
+    /**
+     * @param dayPlayed the dayPlayed to set
+     */
+    public void setDayPlayed(Timestamp dayPlayed) {
+        this.dayPlayed = dayPlayed;
     }
 
 }
