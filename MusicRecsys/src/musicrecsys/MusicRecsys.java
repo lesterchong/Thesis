@@ -4,9 +4,7 @@
  */
 package musicrecsys;
 
-import javazoom.jlgui.player.amp.playlist.BasePlaylist;
-import javazoom.jlgui.player.amp.playlist.Playlist;
-import javazoom.jlgui.player.amp.playlist.PlaylistItem;
+import model.UtilityMatrix;
 
 /**
  *
@@ -18,11 +16,10 @@ public class MusicRecsys {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        String string = "07/14/2014 19:49:25, 02 Magasin by Paolo Santos.mp3 MANUAL";
-        String token[];
+        UtilityMatrix um = new UtilityMatrix();
         
-        token = string.split("AUTOMATIC|MANUAL|,");
-        System.out.println(token[2]);
-        
+        for(int ctr =0; ctr<3; ctr++){
+            System.out.println(um.topThreeUtility().get(ctr).getName());
+        }
     }
 }
