@@ -112,10 +112,12 @@ public class UtilityMatrix {
     }
     
     public double playMethodValue(String log){
-        if(log.endsWith("MANUAL")){
+        if(log.endsWith("MANUAL") || log.endsWith("REPEAT") || log.endsWith("PREVIOUS")){
             return 1;
         }else if(log.endsWith("AUTOMATIC")){
             return .5;
+        }else if(log.endsWith("NEXT")){
+            return -.5;
         }
         return 0;
     }
@@ -123,13 +125,15 @@ public class UtilityMatrix {
     public void parseUserInfo(){
         SimpleDateFormat sd = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
         UtilityRow temp;
+        //BufferedWriter bw = new FileWriter(new File())
+        
         try{
             scan = new Scanner(new File("userinfo.txt"));
             
             while(scan.hasNext()){
                 temp = new UtilityRow();
                 line = scan.nextLine();
-                token = line.split("MANUAL|AUTOMATIC|REPEAT|SHUFFLE|,");
+                token = line.split(",");
                 
                 temp.setName(token[1]);
                 temp.setPlayedDay(1);
@@ -147,6 +151,8 @@ public class UtilityMatrix {
                     temp.setSkipped(0);
                     matrix.add(temp);
                 }
+                
+                
             }
         }catch(FileNotFoundException e){
             e.printStackTrace();
@@ -163,5 +169,26 @@ public class UtilityMatrix {
         for(int ctr=0; ctr<matrix.size(); ctr++){
             matrix.get(ctr).setPlayedWeek(0);
         }
+    }
+    
+    //Returns top three instances that have the highest utility values
+    public LinkedList<UtilityRow> topThreeUtility(){
+        LinkedList<UtilityRow> list = new LinkedList<>();
+        double highestUtility=0, temp;
+        int index=0;
+        
+        //Currently running at 3^n wherein n is number of instances. Needs to be optimized.
+        for(int itr=0; itr<3; itr++){
+            for(int ctr=0; ctr<matrix.size(); ctr++){
+                //Below is equation for computing utility value. method+(playedDay*.5)+(playedWeek*.4)-skipped
+                temp = matrix.get(ctr).getPlayMethod()+(matrix.get(ctr).getPlayedDay()*.5)+(matrix.get(ctr).getPlayedWeek()*.4)-matrix.get(ctr).getSkipped();
+                if(temp > highestUtility){
+                    highestUtility = temp;
+                    index = ctr;
+                }
+            }
+        list.add(matrix.get(index));
+        }
+        return list;
     }
 }
