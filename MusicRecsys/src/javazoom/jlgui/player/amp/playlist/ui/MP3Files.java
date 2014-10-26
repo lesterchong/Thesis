@@ -704,7 +704,7 @@ public class MP3Files extends Window implements ActionListener
               player.setCurrentSong(pli);
               playlist.setCursor(index);
               String info = pli.getName();
-              player.tFrame.addText(info+" MANUAL");
+              player.tFrame.addText(info+", MANUAL");
               player.pressStart();
             }
           }
