@@ -4,7 +4,9 @@
  */
 package musicrecsys;
 
-import model.UtilityMatrix;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  *
@@ -16,10 +18,19 @@ public class MusicRecsys {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        UtilityMatrix um = new UtilityMatrix();
+        SimpleDateFormat sd = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+        long mili1, mili2;
         
-        for(int ctr =0; ctr<3; ctr++){
-            System.out.println(um.topThreeUtility().get(ctr).getName());
+        try{
+            mili1 = sd.parse("2014/10/14 12:59:00").getTime();
+            mili2 = sd.parse("2014/10/14 13:00:20").getTime();
+            
+            System.out.println((mili2-mili1)/1000);
+        }catch(ParseException e){
+            
         }
+        
+            
+        
     }
 }
