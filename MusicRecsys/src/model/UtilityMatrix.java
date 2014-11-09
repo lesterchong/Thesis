@@ -11,10 +11,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,10 +26,12 @@ public class UtilityMatrix {
     private UtilityRow temp;
     private Scanner scan;
     private String line, token[];
-    
+    private SimpleDateFormat sd;
     
     public UtilityMatrix(){
         try{
+            refreshDay();
+            refreshMonth();
             readFromFile();
         }catch(FileNotFoundException e){
             matrix = new LinkedList<>();
@@ -38,6 +41,7 @@ public class UtilityMatrix {
     private boolean readFromFile() throws FileNotFoundException{
         matrix = new LinkedList<>();
         scan = new Scanner(new File("UtilityMatrix.csv"));
+        sd = new SimpleDateFormat("yyyy/MM/dd");
         scan.nextLine();
         
         while(scan.hasNext()){
@@ -57,8 +61,9 @@ public class UtilityMatrix {
     }
     
     public void writeToFile(){
+        File file = new File("UtilityMatrix.csv");
+        
         try{
-            File file = new File("UtilityMatrix.csv");
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
             
             bf.write("name");
@@ -71,10 +76,10 @@ public class UtilityMatrix {
             
             while(!matrix.isEmpty()){
                 bf.write(matrix.getFirst().getName());
-                bf.write(String.valueOf(matrix.getFirst().getPlayMethod())+",");
-                bf.write(matrix.getFirst().getPlayedDay()+",");
-                bf.write(matrix.getFirst().getPlayedEver()+",");
-                bf.write(matrix.getFirst().getPlayedWeek()+",");
+                bf.write(String.valueOf(matrix.getFirst().getPlayMethod())+", ");
+                bf.write(matrix.getFirst().getPlayedDay()+", ");
+                bf.write(matrix.getFirst().getPlayedEver()+", ");
+                bf.write(matrix.getFirst().getPlayedWeek()+", ");
                 bf.write(String.valueOf(matrix.getFirst().getSkipped()));
                 bf.newLine();
                 matrix.removeFirst();
@@ -93,7 +98,7 @@ public class UtilityMatrix {
         }
     }
     
-    public UtilityRow searchSong(UtilityRow item){
+    public UtilityRow searchSongByName(UtilityRow item){
         for(int ctr = 0; ctr<matrix.size(); ctr++){
             if(matrix.get(ctr).getName().equals(item.getName())){
                 return matrix.get(ctr);
@@ -111,7 +116,7 @@ public class UtilityMatrix {
         return false;
     }
     
-    //returns double value based on the log
+    //returns corresponding double value based on the log
     public double playMethodValue(String log){
         if(log.endsWith("MANUAL") || log.endsWith("REPEAT") || log.endsWith("PREVIOUS")){
             return 1;
@@ -123,18 +128,19 @@ public class UtilityMatrix {
         return 0;
     }
 
-    //Issue: Problem if user pauses 
-    public double blahblah(long songSec){
-        
+    //Issue: Problem if user pauses. Pauses found. Problem now is how to get time paused. 
+    public double computeSkipped(long songSec){
+        //1 - (song length played - length paused)/total song length
+        //return value wherein 0 <= value < 1
         return 0;
     }
     
     public void parseUserInfo(){
-        SimpleDateFormat sd = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
-        UtilityRow temp;
-        //BufferedWriter bw = new FileWriter(new File())
+        File file = new File("old_userinfo.txt");
+        BufferedWriter bw;
         
         try{
+            bw = new BufferedWriter(new FileWriter(file));
             scan = new Scanner(new File("userinfo.txt"));
             
             while(scan.hasNext()){
@@ -144,12 +150,11 @@ public class UtilityMatrix {
                 
                 temp.setName(token[1]);
                 temp.setPlayedDay(1);
-                temp.setDayPlayed(new Timestamp(System.currentTimeMillis()));
                 temp.setPlayedEver(1);
                 temp.setPlayedWeek(1);
                 
-                if(doesSongExist(temp)==true){    
-                    temp = searchSong(temp);
+                if(doesSongExist(temp)==true){
+                    temp = searchSongByName(temp);
                     temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
                     temp.setSkipped(0);
                     updateMatrix(temp);
@@ -158,23 +163,92 @@ public class UtilityMatrix {
                     temp.setSkipped(0);
                     matrix.add(temp);
                 }
-                
-                
+                    bw.write(line);
             }
-        }catch(FileNotFoundException e){
+        }catch(IOException e){
+            e.printStackTrace();
+        }
+        
+    }
+    
+    //Still need to be tested.
+    private void refreshDay() throws FileNotFoundException{
+        String line, token[];
+        Scanner scan;
+        int currentDay=0, previousDay=0;
+        
+        /*
+            Insert conditional statement here determining if day has changed
+            Possible conditon would be:
+            if(opened player date != player last closed date)
+            This will be based on userinfo.txt
+        */
+        
+        try {
+            scan = new Scanner(new File(""));
+            while(scan.hasNext()){
+                line = scan.nextLine();
+                if(line.contains("OPENED PLAYER")){
+                    token = line.split("/");
+                    previousDay = currentDay;
+                    currentDay = Integer.parseInt(token[1]);
+                }
+            }
+            
+            if(currentDay != previousDay){
+                //for-loop does the actual resetting of playedDate
+                for(int ctr=0; ctr<matrix.size(); ctr++){
+                    matrix.get(ctr).setPlayedDay(0);
+                }
+            }
+            
+        } catch (FileNotFoundException e) {
+            Logger.getLogger(UtilityMatrix.class.getName()).log(Level.SEVERE, null, e);
             e.printStackTrace();
         }
     }
     
-    public void refreshForTheDay(){
+    /*
+        Probably should change this shit to month. This shit be computationaly hassle.
+        - Hassle in keeping track of week
+        - How to know from week 1 to week 2
+        - At least with month it'd be easier since it's already in the timestamp. More difficult than refreshDay but more plausible
+    */
+    private void refreshWeek(){
+        /*
+            Insert conditional statement here determining if week has changed
+            Possible solution: 
+                same shit as day
+                    How to count date: Use Calendar object to do shit. 
+        */
         for(int ctr=0; ctr<matrix.size(); ctr++){
-            matrix.get(ctr).setPlayedDay(0);
+            matrix.get(ctr).setPlayedWeek(0);
         }
     }
     
-    public void refreshForTheWeek(){
-        for(int ctr=0; ctr<matrix.size(); ctr++){
-            matrix.get(ctr).setPlayedWeek(0);
+    private void refreshMonth(){
+        int currentMonth=0, previousMonth=0;
+        Scanner scan;
+        
+        try{
+            scan = new Scanner(new File(""));
+            while(scan.hasNext()){
+                line = scan.nextLine();
+                if(line.contains("OPENED PLAYER")){
+                    token = line.split("/");
+                    previousMonth = currentMonth;
+                    currentMonth = Integer.parseInt(token[0]);
+                }
+            }
+            
+            if(currentMonth != previousMonth){
+                for(int ctr=0; ctr<matrix.size(); ctr++){
+                    //Tentative. Will be replaced with playedMonth if ever.
+                    matrix.get(ctr).setPlayedWeek(0);
+                }
+            }
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
         }
     }
     
@@ -188,7 +262,7 @@ public class UtilityMatrix {
         for(int itr=0; itr<3; itr++){
             highestUtility=0;
             for(int ctr=0; ctr<matrix.size(); ctr++){
-                //Below is equation for computing utility value. method+(playedDay*.5)+(playedWeek*.4)-skipped
+                //Below is equation for computing utility value. method+(playedDay*.5)+(playedWeek*.5)-skipped
                 utilityValue = matrix.get(ctr).getPlayMethod()+(matrix.get(ctr).getPlayedDay()*.5)+(matrix.get(ctr).getPlayedWeek()*.5)+(matrix.get(ctr).getPlayedEver()*.5)-matrix.get(ctr).getSkipped();
                 if(utilityValue > highestUtility){
                     highestUtility = utilityValue;

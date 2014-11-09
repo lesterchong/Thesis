@@ -80,9 +80,9 @@ public class Recommendation {
     
     public int euclideanDistance(SongInstance instance){
         int distance;
-        distance = ((three.get(1).getX() - instance.getX()) + (three.get(1).getY() - instance.getY())) +
-                   ((three.get(2).getX() - instance.getX()) + (three.get(2).getY() - instance.getY())) +
-                   ((three.get(3).getX() - instance.getX()) + (three.get(3).getY() - instance.getY()));
+        distance = Math.abs((three.get(1).getX() - instance.getX()) + (three.get(1).getY() - instance.getY())) +
+                   Math.abs((three.get(2).getX() - instance.getX()) + (three.get(2).getY() - instance.getY())) +
+                   Math.abs((three.get(3).getX() - instance.getX()) + (three.get(3).getY() - instance.getY()));
         
         return distance;
     }
