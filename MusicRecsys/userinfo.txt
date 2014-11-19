@@ -1,28 +1,6 @@
-06/26/2014 11:04:44  ************** CLOSED PLAYER ***************** 
-07/14/2014 19:41:25  ************** OPENED PLAYER ***************** 
-07/14/2014 19:42:28 [www.stark-torrents.blogspot.com] Silent Sanctuary - Monodramatic (2013) MANUAL
-07/14/2014 19:42:29 [www.stark-torrents.blogspot.com] Silent Sanctuary - Monodramatic (2013) STARTED PLAYLIST
-07/14/2014 19:42:33 [www.stark-torrents.blogspot.com] Silent Sanctuary - Monodramatic (2013) MANUAL
-07/14/2014 19:42:34 02 Magasin by Paolo Santos.mp3 MANUAL
-07/14/2014 19:45:34 02 Magasin by Paolo Santos.mp3 REPEAT
-07/14/2014 19:49:03 03 Spoliarium by Imago.mp3 NEXT
-07/14/2014 19:49:25 02 Magasin by Paolo Santos.mp3 MANUAL
-07/14/2014 19:49:27  ************** CLOSED PLAYER ***************** 
-09/26/2014 16:10:34  ************** OPENED PLAYER ***************** 
-09/26/2014 16:11:47  ************** CLOSED PLAYER ***************** 
-10/17/2014 09:57:08  ************** OPENED PLAYER ***************** 
-10/17/2014 09:57:12  ************** CLOSED PLAYER ***************** 
-10/17/2014 10:21:22  ************** OPENED PLAYER ***************** 
-10/17/2014 10:21:43 Antukin - Rico Blanco MANUAL
-10/17/2014 10:21:55  ************** CLOSED PLAYER ***************** 
-10/17/2014 10:25:01  ************** OPENED PLAYER ***************** 
-10/17/2014 10:25:26  ************** CLOSED PLAYER ***************** 
-10/17/2014 10:56:25  ************** OPENED PLAYER ***************** 
-10/17/2014 10:56:51 Antukin - Rico Blanco MANUAL
-10/17/2014 10:56:55 Dianetic - Pupil MANUAL
-10/17/2014 10:56:57 Shooting Star MANUAL
-10/17/2014 10:57:03  ************** CLOSED PLAYER ***************** 
-10/25/2014 19:06:18,  ************** OPENED PLAYER ***************** 
-10/25/2014 19:06:59, Dianetic - Pupil, AUTOMATIC
-10/25/2014 19:07:09, Shooting Star, NEXT
-10/25/2014 19:07:12,  ************** CLOSED PLAYER ***************** 
+10/25/2014 20:29:09,  ************** OPENED PLAYER ***************** 
+10/25/2014 20:29:25, Dianetic - Pupil, MANUAL
+10/25/2014 20:29:30, Dianetic - Pupil, MANUAL
+10/25/2014 20:29:31, Shooting Star, MANUAL
+10/25/2014 20:29:35, Antukin - Rico Blanco, MANUAL
+10/25/2014 20:29:40,  ************** CLOSED PLAYER ***************** 

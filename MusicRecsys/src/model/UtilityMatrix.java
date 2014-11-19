@@ -148,23 +148,26 @@ public class UtilityMatrix {
                 line = scan.nextLine();
                 token = line.split(",");
                 
-                temp.setName(token[1]);
-                temp.setPlayedDay(1);
-                temp.setPlayedEver(1);
-                temp.setPlayedWeek(1);
-                
-                if(doesSongExist(temp)==true){
-                    temp = searchSongByName(temp);
-                    temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
-                    temp.setSkipped(0);
-                    updateMatrix(temp);
-                }else{
-                    temp.setPlayMethod(0.1+playMethodValue(line));
-                    temp.setSkipped(0);
-                    matrix.add(temp);
+                if(!(token[1].contains("OPENED PLAYER") || token[1].contains("CLOSED PLAYER"))){
+                    temp.setName(token[1]);
+                    temp.setPlayedDay(1);
+                    temp.setPlayedEver(1);
+                    temp.setPlayedWeek(1);
+
+                    if(doesSongExist(temp)==true){
+                        temp = searchSongByName(temp);
+                        temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
+                        temp.setSkipped(0);
+                        updateMatrix(temp);
+                    }else{
+                        temp.setPlayMethod(0.1+playMethodValue(line));
+                        temp.setSkipped(0);
+                        matrix.add(temp);
+                    }
+                        bw.write(line);
                 }
-                    bw.write(line);
-            }
+        }
+            bw.close();
         }catch(IOException e){
             e.printStackTrace();
         }
@@ -185,7 +188,7 @@ public class UtilityMatrix {
         */
         
         try {
-            scan = new Scanner(new File(""));
+            scan = new Scanner(new File("userinfo.txt"));
             while(scan.hasNext()){
                 line = scan.nextLine();
                 if(line.contains("OPENED PLAYER")){
@@ -231,7 +234,7 @@ public class UtilityMatrix {
         Scanner scan;
         
         try{
-            scan = new Scanner(new File(""));
+            scan = new Scanner(new File("userinfo.txt"));
             while(scan.hasNext()){
                 line = scan.nextLine();
                 if(line.contains("OPENED PLAYER")){
