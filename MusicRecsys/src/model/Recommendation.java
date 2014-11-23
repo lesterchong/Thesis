@@ -38,16 +38,16 @@ public class Recommendation {
         try{
         readFromFile();
         }catch(FileNotFoundException e){
-            System.out.println("Wew");
+            System.out.println("Cannot find file.");
         }
         
     }
     
     public void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
-        scan = new Scanner(new File("Song Attribute Values.arff"));
+        scan = new Scanner(new File("Song Attributes.arff"));
         
-        for(int ctr = 1; ctr <= 668; ctr++){
+        for(int ctr = 1; ctr <= 195; ctr++){
             scan.nextLine();
         }
         
