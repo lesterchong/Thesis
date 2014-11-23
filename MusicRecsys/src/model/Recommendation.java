@@ -7,6 +7,8 @@ package model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -15,14 +17,19 @@ import java.util.Scanner;
  * @author mikeyboy213
  */
 public class Recommendation {
-    UtilityMatrix matrix;
-    LinkedList <SongInstance> instances;
-    LinkedList <SongInstance> topten;
-    LinkedList <SongInstance> three = new LinkedList<>();
+    private UtilityMatrix matrix;
+    private LinkedList <SongInstance> instances;
+    private LinkedList <SongInstance> topten;
+    private LinkedList <SongInstance> three;
     private Scanner scan;
     private String line, tokens[];
     private int counter = 1;
-    SongInstance temp;
+    private SongInstance temp;
+    private LinkedList <Float> tempattributes;
+    private LinkedList<SongInstance> cluster0;
+    private LinkedList<SongInstance> cluster1;
+    private LinkedList<SongInstance> cluster2;
+    private LinkedList<SongInstance> cluster3;
     
     public Recommendation(UtilityMatrix matrix){
         this.matrix = matrix;
@@ -46,15 +53,40 @@ public class Recommendation {
             line = scan.nextLine();
             tokens = line.split(",");
             temp = new SongInstance();
+            tempattributes = new LinkedList();
             
             temp.setId(counter);
-           // temp.setCluster(tokens[tokens.length()-1]);
-           // temp.setX(?);
-           // temp.setY(?);
+            
+            for(int ctr = 0; ctr < tokens.length-1; ctr++){
+                tempattributes.add(Float.parseFloat(tokens[ctr]));
+            }
+            
+            temp.setAttributes(tempattributes);
+            temp.setCluster(tokens[tokens.length-1]);
             instances.add(temp);
             counter ++;
-        }    
+        }
+        scan.close();
         
+        Cluster(instances);
+    }
+    
+    public void Cluster (LinkedList<SongInstance> list){
+        
+        for(int ctr = 0; ctr < list.size(); ctr++){
+            
+            if(list.get(ctr).getCluster().equals("cluster0"))
+                cluster0.add(list.get(ctr));
+            
+            else if(list.get(ctr).getCluster().equals("cluster1"))
+                cluster1.add(list.get(ctr));
+            
+            else if(list.get(ctr).getCluster().equals("cluster2"))
+                cluster2.add(list.get(ctr));
+            
+            else if(list.get(ctr).getCluster().equals("cluster3"))
+                cluster3.add(list.get(ctr));
+        }
     }
     
     public LinkedList<SongInstance> Convert(){
@@ -78,27 +110,48 @@ public class Recommendation {
         return temp;
     }
     
-    public int euclideanDistance(SongInstance instance){
-        int distance;
-        distance = Math.abs((three.get(1).getX() - instance.getX()) + (three.get(1).getY() - instance.getY())) +
-                   Math.abs((three.get(2).getX() - instance.getX()) + (three.get(2).getY() - instance.getY())) +
-                   Math.abs((three.get(3).getX() - instance.getX()) + (three.get(3).getY() - instance.getY()));
+    public void euclideanDistance(SongInstance instance){
+        instance.setTempdistance(0);
+        /*
+        distance = ((three.get(1).getX() - instance.getX()) + (three.get(1).getY() - instance.getY())) +
+                   ((three.get(2).getX() - instance.getX()) + (three.get(2).getY() - instance.getY())) +
+                   ((three.get(3).getX() - instance.getX()) + (three.get(3).getY() - instance.getY()));
+        */
         
-        return distance;
+        for(int ctr = 0; ctr < instance.getAttributes().size(); ctr++){
+            instance.setTempdistance(instance.getTempdistance() + ((three.get(1).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
+                                                                   (three.get(2).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
+                                                                   (three.get(3).getAttributes().get(ctr) - instance.getAttributes().get(ctr))));
+        }
+        
     }
     
     public LinkedList <SongInstance> Recommend(){ 
+        topten = new LinkedList<>();
         three = Convert();
-        int distance;
+        float distance;
+        float highestvalue = 0;
         
         for(int ctr = 0; ctr < instances.size(); ctr++){
-            distance = euclideanDistance(instances.get(ctr));
-            
+            euclideanDistance(instances.get(ctr));
             //if distance is least then topten.add(instance.get(ctr));
-        }
+        }          
         
+        Collections.sort(instances, new distanceComparator());
+        
+        for(int ctr = 0; ctr < 10; ctr++){
+            topten.add(instances.get(ctr));
+        }
         return topten;
     }
+    
+    class distanceComparator implements Comparator<SongInstance> {
+        
+        @Override
+        public int compare(SongInstance a, SongInstance b) {
+           return a.getTempdistance() < b.getTempdistance() ? -1 : a.getTempdistance() == b.getTempdistance() ? 0 : 1;
+    }
+}
     
     
 }
