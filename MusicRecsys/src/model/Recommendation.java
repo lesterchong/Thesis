@@ -82,14 +82,6 @@ public class Recommendation {
         }
         scan.close();
         
-        System.out.println(instances.get(1116).getId());
-        
-        for(int i = 0; i < instances.get(1116).getAttributes().size(); i++){
-            System.out.println(instances.get(1116).getAttributes().get(i) + " ");
-        }
-        
-        System.out.println(instances.get(1116).getCluster());
-        
         Cluster(instances);
         
     }
