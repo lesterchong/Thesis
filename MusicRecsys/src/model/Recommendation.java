@@ -30,24 +30,33 @@ public class Recommendation {
     private LinkedList<SongInstance> cluster1;
     private LinkedList<SongInstance> cluster2;
     private LinkedList<SongInstance> cluster3;
-    
+    private float defNumber = 0;
+
     public Recommendation(UtilityMatrix matrix){
         this.matrix = matrix;
         
         try{
         readFromFile();
         }catch(FileNotFoundException e){
-            //File does not exist
+            System.out.println("Wew");
         }
+        
     }
     
     public void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
-        scan = new Scanner(new File("SongValues.arff"));
-        scan.nextLine();
+        scan = new Scanner(new File("Song Attribute Values.arff"));
         
-        while(scan.hasNext() && scan.nextLine() != "@data")
+        for(int ctr = 1; ctr <= 668; ctr++){
             scan.nextLine();
+        }
+        
+        /*
+        while(!scan.nextLine().equals("@data")){
+            System.out.println(scan.nextLine());
+            scan.nextLine();
+        }
+        */
         
         while(scan.hasNext()){
             line = scan.nextLine();
@@ -57,8 +66,13 @@ public class Recommendation {
             
             temp.setId(counter);
             
-            for(int ctr = 0; ctr < tokens.length-1; ctr++){
-                tempattributes.add(Float.parseFloat(tokens[ctr]));
+            for(int ctr = 1; ctr < tokens.length-1; ctr++){
+                
+                if(tokens[ctr].equals("?"))
+                    tempattributes.add(defNumber);
+                
+                else
+                    tempattributes.add(Float.parseFloat(tokens[ctr]));
             }
             
             temp.setAttributes(tempattributes);
@@ -68,10 +82,24 @@ public class Recommendation {
         }
         scan.close();
         
+        System.out.println(instances.get(1116).getId());
+        
+        for(int i = 0; i < instances.get(1116).getAttributes().size(); i++){
+            System.out.println(instances.get(1116).getAttributes().get(i) + " ");
+        }
+        
+        System.out.println(instances.get(1116).getCluster());
+        
         Cluster(instances);
+        
     }
     
+    
     public void Cluster (LinkedList<SongInstance> list){
+        cluster0 = new LinkedList<>();
+        cluster1 = new LinkedList<>();
+        cluster2 = new LinkedList<>();
+        cluster3 = new LinkedList<>();
         
         for(int ctr = 0; ctr < list.size(); ctr++){
             
@@ -119,9 +147,9 @@ public class Recommendation {
         */
         
         for(int ctr = 0; ctr < instance.getAttributes().size(); ctr++){
-            instance.setTempdistance(instance.getTempdistance() + ((three.get(1).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
-                                                                   (three.get(2).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
-                                                                   (three.get(3).getAttributes().get(ctr) - instance.getAttributes().get(ctr))));
+            instance.setTempdistance(instance.getTempdistance() + ((three.get(0).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
+                                                                   (three.get(1).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
+                                                                   (three.get(2).getAttributes().get(ctr) - instance.getAttributes().get(ctr))));
         }
         
     }
@@ -129,8 +157,6 @@ public class Recommendation {
     public LinkedList <SongInstance> Recommend(){ 
         topten = new LinkedList<>();
         three = Convert();
-        float distance;
-        float highestvalue = 0;
         
         for(int ctr = 0; ctr < instances.size(); ctr++){
             euclideanDistance(instances.get(ctr));
