@@ -36,6 +36,8 @@ public class UtilityMatrix {
         }catch(FileNotFoundException e){
             matrix = new LinkedList<>();
         }
+        parseUserInfo();
+        writeToFile();
     }
     
     private boolean readFromFile() throws FileNotFoundException{
@@ -49,12 +51,13 @@ public class UtilityMatrix {
             token = line.split(",");
             temp = new UtilityRow();
                 
-            temp.setName(token[0]);
-            temp.setPlayMethod(Double.parseDouble(token[1]));
-            temp.setPlayedDay(Integer.parseInt(token[2]));
-            temp.setPlayedWeek(Integer.parseInt(token[3]));
-            temp.setPlayedEver(Integer.parseInt(token[4]));
-            temp.setSkipped(Double.parseDouble(token[5]));
+            temp.setID(Integer.parseInt(token[0]));
+            temp.setName(token[1]);
+            temp.setPlayMethod(Double.parseDouble(token[2]));
+            temp.setPlayedDay(Integer.parseInt(token[3]));
+            temp.setPlayedWeek(Integer.parseInt(token[4]));
+            temp.setPlayedEver(Integer.parseInt(token[5]));
+            temp.setSkipped(Double.parseDouble(token[6]));
             matrix.addLast(temp);
         }
         return true;
@@ -65,7 +68,7 @@ public class UtilityMatrix {
         
         try{
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
-            
+
             bf.write("name");
             bf.write("playMethod");
             bf.write("playedDay");
@@ -75,6 +78,7 @@ public class UtilityMatrix {
             
             
             while(!matrix.isEmpty()){
+                bf.write(matrix.getFirst().getID());
                 bf.write(matrix.getFirst().getName());
                 bf.write(String.valueOf(matrix.getFirst().getPlayMethod())+", ");
                 bf.write(matrix.getFirst().getPlayedDay()+", ");
@@ -180,13 +184,6 @@ public class UtilityMatrix {
         Scanner scan;
         int currentDay=0, previousDay=0;
         
-        /*
-            Insert conditional statement here determining if day has changed
-            Possible conditon would be:
-            if(opened player date != player last closed date)
-            This will be based on userinfo.txt
-        */
-        
         try {
             scan = new Scanner(new File("userinfo.txt"));
             while(scan.hasNext()){
@@ -211,19 +208,8 @@ public class UtilityMatrix {
         }
     }
     
-    /*
-        Probably should change this shit to month. This shit be computationaly hassle.
-        - Hassle in keeping track of week
-        - How to know from week 1 to week 2
-        - At least with month it'd be easier since it's already in the timestamp. More difficult than refreshDay but more plausible
-    */
     private void refreshWeek(){
-        /*
-            Insert conditional statement here determining if week has changed
-            Possible solution: 
-                same shit as day
-                    How to count date: Use Calendar object to do shit. 
-        */
+
         for(int ctr=0; ctr<matrix.size(); ctr++){
             matrix.get(ctr).setPlayedWeek(0);
         }
@@ -277,5 +263,14 @@ public class UtilityMatrix {
         }
         matrix.addAll(list);
         return list;
+    }
+    
+    public UtilityRow searchSongByID(int ID){
+        for(int ctr = 0; ctr<matrix.size(); ctr++){
+            if(matrix.get(ctr).getID() == ID){
+                return matrix.get(ctr);
+            }
+        }
+        return null;
     }
 }

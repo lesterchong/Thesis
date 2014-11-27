@@ -12,6 +12,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import model.Recommendation;
+import model.UtilityMatrix;
 
 /**
  *
@@ -82,6 +84,7 @@ public class Tracker extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         TextLog = new javax.swing.JTextArea();
+        recoButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
@@ -89,6 +92,13 @@ public class Tracker extends javax.swing.JFrame {
         TextLog.setColumns(20);
         TextLog.setRows(5);
         jScrollPane1.setViewportView(TextLog);
+
+        recoButton.setText("Recommend");
+        recoButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                recoButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -98,17 +108,29 @@ public class Tracker extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 539, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(recoButton)
+                .addGap(20, 20, 20))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(recoButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void recoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recoButtonActionPerformed
+        UtilityMatrix um = new UtilityMatrix();
+        Recommendation reco = new Recommendation(um);
+        reco.Recommend();
+    }//GEN-LAST:event_recoButtonActionPerformed
 
     public void addText(String str)
     {
@@ -153,5 +175,6 @@ public class Tracker extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea TextLog;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JButton recoButton;
     // End of variables declaration//GEN-END:variables
 }

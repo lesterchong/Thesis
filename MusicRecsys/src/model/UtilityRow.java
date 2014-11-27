@@ -13,6 +13,7 @@ import java.sql.Timestamp;
  * @author Lester Chong
  */
 public class UtilityRow {
+    private int ID;
     private String name;
     private double playMethod;
     private int playedDay;
@@ -102,5 +103,19 @@ public class UtilityRow {
      */
     public void setSkipped(double skipped) {
         this.skipped = skipped;
+    }
+
+    /**
+     * @return the ID
+     */
+    public int getID() {
+        return ID;
+    }
+
+    /**
+     * @param ID the ID to set
+     */
+    public void setID(int ID) {
+        this.ID = ID;
     }
 }

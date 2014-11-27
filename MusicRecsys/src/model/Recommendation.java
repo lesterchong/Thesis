@@ -11,6 +11,9 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
+import javazoom.jlgui.player.amp.playlist.BasePlaylist;
+import javazoom.jlgui.player.amp.playlist.Playlist;
+import javazoom.jlgui.player.amp.playlist.PlaylistItem;
 
 /**
  *
@@ -109,19 +112,18 @@ public class Recommendation {
         }
     }
     
-    public LinkedList<SongInstance> Convert(){
-        LinkedList <UtilityRow> topthree = matrix.topThreeUtility();
+    public LinkedList<SongInstance> Convert(LinkedList <UtilityRow> topthree){
         LinkedList<SongInstance> temp = new LinkedList<>();
-        String id;
+        int id;
         
         for(int ctr = 0; ctr < topthree.size(); ctr++){
             
             tokens = topthree.get(ctr).getName().split(" ");
-            id = tokens[0];
+            id = Integer.parseInt(tokens[0]);
             
             for(int ctr2 = 0; ctr2 < instances.size(); ctr2++){
                 
-                if(id.equals(instances.get(ctr2).getId())){
+                if(id == instances.get(ctr2).getId()){
                     temp.add(instances.get(ctr2));
                     //break;
                 }
@@ -146,9 +148,10 @@ public class Recommendation {
         
     }
     
-    public LinkedList <SongInstance> Recommend(){ 
+    public LinkedList <SongInstance> Recommend(){
+        LinkedList<UtilityRow> topThree = matrix.topThreeUtility();
+        three = Convert(topThree);
         topten = new LinkedList<>();
-        three = Convert();
         
         for(int ctr = 0; ctr < instances.size(); ctr++){
             euclideanDistance(instances.get(ctr));
@@ -161,6 +164,22 @@ public class Recommendation {
             topten.add(instances.get(ctr));
         }
         return topten;
+    }
+    
+    public boolean generatePlaylist(){
+        PlaylistItem item;
+        String filename;
+        Playlist playlist = new BasePlaylist();
+        LinkedList<SongInstance> list = Recommend();
+        
+        for(int ctr=0; ctr<list.size(); ctr++){
+            filename = matrix.searchSongByID(list.get(ctr).getId()).getName();
+            
+            item = new PlaylistItem(filename, "Song Repository/"+filename, 0, true);
+            playlist.appendItem(item);
+        }
+        playlist.save("recommend.m3u");
+        return false;
     }
     
     class distanceComparator implements Comparator<SongInstance> {
