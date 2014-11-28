@@ -14,15 +14,13 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.LinkedList;
 import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author Lester Chong
  */
 public class UtilityMatrix {
-    private LinkedList<UtilityRow> matrix;
+    private static LinkedList<UtilityRow> matrix;
     private UtilityRow temp;
     private Scanner scan;
     private String line, token[];
@@ -41,6 +39,7 @@ public class UtilityMatrix {
     }
     
     private boolean readFromFile() throws FileNotFoundException{
+        int ctr=0;
         matrix = new LinkedList<>();
         scan = new Scanner(new File("UtilityMatrix.csv"));
         sd = new SimpleDateFormat("yyyy/MM/dd");
@@ -51,7 +50,7 @@ public class UtilityMatrix {
             token = line.split(",");
             temp = new UtilityRow();
                 
-            temp.setID(Integer.parseInt(token[0]));
+            temp.setID(ctr);
             temp.setName(token[1]);
             temp.setPlayMethod(Double.parseDouble(token[2]));
             temp.setPlayedDay(Integer.parseInt(token[3]));
@@ -59,6 +58,7 @@ public class UtilityMatrix {
             temp.setPlayedEver(Integer.parseInt(token[5]));
             temp.setSkipped(Double.parseDouble(token[6]));
             matrix.addLast(temp);
+            ctr++;
         }
         return true;
     }
@@ -69,24 +69,24 @@ public class UtilityMatrix {
         try{
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
 
-            bf.write("name");
-            bf.write("playMethod");
-            bf.write("playedDay");
-            bf.write("playedEver");
-            bf.write("playedWeek");
-            bf.write("skipped");
+            bf.write("name, ");
+            bf.write("playMethod, ");
+            bf.write("playedDay, ");
+            bf.write("playedEver, ");
+            bf.write("playedWeek, ");
+            bf.write("skipped, ");
+            bf.newLine();
             
             
-            while(!matrix.isEmpty()){
-                bf.write(matrix.getFirst().getID());
-                bf.write(matrix.getFirst().getName());
-                bf.write(String.valueOf(matrix.getFirst().getPlayMethod())+", ");
-                bf.write(matrix.getFirst().getPlayedDay()+", ");
-                bf.write(matrix.getFirst().getPlayedEver()+", ");
-                bf.write(matrix.getFirst().getPlayedWeek()+", ");
-                bf.write(String.valueOf(matrix.getFirst().getSkipped()));
+            for(int ctr =0; ctr<matrix.size(); ctr++){
+                bf.write(matrix.get(ctr).getID()+",");
+                bf.write(matrix.get(ctr).getName()+",");
+                bf.write(String.valueOf(matrix.get(ctr).getPlayMethod())+",");
+                bf.write(matrix.get(ctr).getPlayedDay()+",");
+                bf.write(matrix.get(ctr).getPlayedEver()+",");
+                bf.write(matrix.get(ctr).getPlayedWeek()+",");
+                bf.write(String.valueOf(matrix.get(ctr).getSkipped()));
                 bf.newLine();
-                matrix.removeFirst();
             }
             bf.close();
         }catch(IOException e){
@@ -152,7 +152,7 @@ public class UtilityMatrix {
                 line = scan.nextLine();
                 token = line.split(",");
                 
-                if(!(token[1].contains("OPENED PLAYER") || token[1].contains("CLOSED PLAYER"))){
+                if(!(line.contains("OPENED PLAYER") || line.contains("CLOSED PLAYER"))){
                     temp.setName(token[1]);
                     temp.setPlayedDay(1);
                     temp.setPlayedEver(1);
@@ -169,6 +169,7 @@ public class UtilityMatrix {
                         matrix.add(temp);
                     }
                         bw.write(line);
+                        bw.newLine();
                 }
         }
             bw.close();
@@ -184,7 +185,6 @@ public class UtilityMatrix {
         Scanner scan;
         int currentDay=0, previousDay=0;
         
-        try {
             scan = new Scanner(new File("userinfo.txt"));
             while(scan.hasNext()){
                 line = scan.nextLine();
@@ -201,11 +201,6 @@ public class UtilityMatrix {
                     matrix.get(ctr).setPlayedDay(0);
                 }
             }
-            
-        } catch (FileNotFoundException e) {
-            Logger.getLogger(UtilityMatrix.class.getName()).log(Level.SEVERE, null, e);
-            e.printStackTrace();
-        }
     }
     
     private void refreshWeek(){
@@ -263,14 +258,5 @@ public class UtilityMatrix {
         }
         matrix.addAll(list);
         return list;
-    }
-    
-    public UtilityRow searchSongByID(int ID){
-        for(int ctr = 0; ctr<matrix.size(); ctr++){
-            if(matrix.get(ctr).getID() == ID){
-                return matrix.get(ctr);
-            }
-        }
-        return null;
     }
 }

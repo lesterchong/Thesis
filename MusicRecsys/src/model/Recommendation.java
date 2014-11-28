@@ -39,28 +39,21 @@ public class Recommendation {
         this.matrix = matrix;
         
         try{
-        readFromFile();
+            readFromFile();
         }catch(FileNotFoundException e){
+            e.printStackTrace();
             System.out.println("Cannot find file.");
         }
         
     }
     
-    public void readFromFile() throws FileNotFoundException{
+    private void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
-        scan = new Scanner(new File("Song Attributes.arff"));
+        scan = new Scanner(new File("Song Attributes Temp.arff"));
         
         for(int ctr = 1; ctr <= 195; ctr++){
             scan.nextLine();
         }
-        
-        /*
-        while(!scan.nextLine().equals("@data")){
-            System.out.println(scan.nextLine());
-            scan.nextLine();
-        }
-        */
-        
         while(scan.hasNext()){
             line = scan.nextLine();
             tokens = line.split(",");
@@ -90,7 +83,7 @@ public class Recommendation {
     }
     
     
-    public void Cluster (LinkedList<SongInstance> list){
+    private void Cluster (LinkedList<SongInstance> list){
         cluster0 = new LinkedList<>();
         cluster1 = new LinkedList<>();
         cluster2 = new LinkedList<>();
@@ -112,14 +105,13 @@ public class Recommendation {
         }
     }
     
-    public LinkedList<SongInstance> Convert(LinkedList <UtilityRow> topthree){
+    private LinkedList<SongInstance> Convert(LinkedList <UtilityRow> topthree){
         LinkedList<SongInstance> temp = new LinkedList<>();
         int id;
         
         for(int ctr = 0; ctr < topthree.size(); ctr++){
-            
             tokens = topthree.get(ctr).getName().split(" ");
-            id = Integer.parseInt(tokens[0]);
+            id = Integer.parseInt(tokens[1]);
             
             for(int ctr2 = 0; ctr2 < instances.size(); ctr2++){
                 
@@ -132,7 +124,7 @@ public class Recommendation {
         return temp;
     }
     
-    public void euclideanDistance(SongInstance instance){
+    private void euclideanDistance(SongInstance instance){
         instance.setTempdistance(0);
         /*
         distance = ((three.get(1).getX() - instance.getX()) + (three.get(1).getY() - instance.getY())) +
@@ -141,7 +133,7 @@ public class Recommendation {
         */
         
         for(int ctr = 0; ctr < instance.getAttributes().size(); ctr++){
-            instance.setTempdistance(instance.getTempdistance() + ((three.get(0).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
+            instance.setTempdistance(instance.getTempdistance() + Math.abs((three.get(0).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
                                                                    (three.get(1).getAttributes().get(ctr) - instance.getAttributes().get(ctr)) +
                                                                    (three.get(2).getAttributes().get(ctr) - instance.getAttributes().get(ctr))));
         }
@@ -166,20 +158,35 @@ public class Recommendation {
         return topten;
     }
     
-    public boolean generatePlaylist(){
+    public Playlist generatePlaylist(){
         PlaylistItem item;
         String filename;
         Playlist playlist = new BasePlaylist();
         LinkedList<SongInstance> list = Recommend();
         
         for(int ctr=0; ctr<list.size(); ctr++){
-            filename = matrix.searchSongByID(list.get(ctr).getId()).getName();
-            
+            filename = getSongNameFromList(list.get(ctr).getId());
             item = new PlaylistItem(filename, "Song Repository/"+filename, 0, true);
             playlist.appendItem(item);
         }
-        playlist.save("recommend.m3u");
-        return false;
+        //playlist.save("recommend.m3u");
+        return playlist;
+    }
+    
+    private String getSongNameFromList(int index){
+        File file = new File("Song Name Database Temp.txt");
+        Scanner scan;
+        String line="";
+        try{
+            scan = new Scanner(file);
+            for(int ctr=0; ctr<index; ctr++){
+                line = scan.nextLine();
+            }
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+            System.out.println(file.getName() + " was not found");
+        }
+        return line;
     }
     
     class distanceComparator implements Comparator<SongInstance> {

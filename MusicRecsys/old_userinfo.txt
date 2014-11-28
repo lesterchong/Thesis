@@ -1,8 +1,4 @@
-11/24/2014 11:52:42,  ************** CLOSED PLAYER ***************** 
-11/27/2014 15:01:26,  ************** OPENED PLAYER ***************** 
-11/27/2014 15:01:45,  ************** CLOSED PLAYER ***************** 
-11/27/2014 15:01:48,  ************** OPENED PLAYER ***************** 
-11/27/2014 15:02:22,1 'Di Na Mababawi.wav, MANUAL
+11/27/2014 15:02:22, 1 'Di Na Mababawi.wav, MANUAL
 11/27/2014 15:02:22, 1 'Di Na Mababawi.wav, STARTED PLAYLIST
 11/27/2014 15:02:49, 102 Bahay Kubo.wav, MANUAL
 11/27/2014 15:03:02, 109 Bakit Labis Kitang Mahal.wav, MANUAL
@@ -96,6 +92,3 @@
 11/27/2014 16:53:16, 196 Close To The End.wav , NEXT
 11/27/2014 16:53:16, 197 Closure.wav , NEXT
 11/27/2014 16:53:17, 198 Clown.wav , NEXT
-11/27/2014 16:56:41,  ************** CLOSED PLAYER ***************** 
-11/27/2014 16:57:08,  ************** OPENED PLAYER ***************** 
-11/27/2014 16:57:20,  ************** CLOSED PLAYER ***************** 
