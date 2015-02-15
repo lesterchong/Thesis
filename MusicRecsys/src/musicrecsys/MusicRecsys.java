@@ -25,7 +25,6 @@ public class MusicRecsys {
      */
     public static void main(String[] args){
         UtilityMatrix um = new UtilityMatrix();
-        Recommendation reco = new Recommendation(um);
-        Playlist list = reco.generatePlaylist();
+        
     }
 }

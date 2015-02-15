@@ -1,101 +1,208 @@
-11/24/2014 11:52:42,  ************** CLOSED PLAYER ***************** 
-11/27/2014 15:01:26,  ************** OPENED PLAYER ***************** 
-11/27/2014 15:01:45,  ************** CLOSED PLAYER ***************** 
-11/27/2014 15:01:48,  ************** OPENED PLAYER ***************** 
-11/27/2014 15:02:22,1 'Di Na Mababawi.wav, MANUAL
-11/27/2014 15:02:22, 1 'Di Na Mababawi.wav, STARTED PLAYLIST
-11/27/2014 15:02:49, 102 Bahay Kubo.wav, MANUAL
-11/27/2014 15:03:02, 109 Bakit Labis Kitang Mahal.wav, MANUAL
-11/27/2014 15:03:09, 115 Balisong.wav, MANUAL
-11/27/2014 15:06:34, 116 Balita.wav, AUTOMATIC
-11/27/2014 15:10:27, 117 Bane.wav, AUTOMATIC
-11/27/2014 15:11:02, 118 Barkada Trip.wav , NEXT
-11/27/2014 15:12:40, 119 Barkada ko.wav , NEXT
-11/27/2014 15:12:42, 12 214.wav , NEXT
-11/27/2014 15:18:54, 120 Basang Basa Sa Ulan.wav, AUTOMATIC
-11/27/2014 15:19:43, 123 Batang-bata Ka Pa.wav, MANUAL
-11/27/2014 15:23:15, 124 Batibot.wav, AUTOMATIC
-11/27/2014 15:26:39, 125 Bawal Sa Party.wav, AUTOMATIC
-11/27/2014 15:27:05, 126 Bawat Bata.wav , NEXT
-11/27/2014 15:30:06, 127 Bayan Ko.wav, AUTOMATIC
-11/27/2014 15:30:43, 128 Be My Number Two.wav , NEXT
-11/27/2014 15:30:45, 129 Beast.wav , NEXT
-11/27/2014 15:30:46, 13 22.wav , NEXT
-11/27/2014 15:30:48, 130 Beautiful Days.wav , NEXT
-11/27/2014 15:30:49, 131 Beauty And Madness.wav , NEXT
-11/27/2014 15:30:50, 132 Because of You.wav , NEXT
-11/27/2014 15:30:53, 133 Beer.wav , NEXT
-11/27/2014 15:30:55, 134Before I Let You Go.wav , NEXT
-11/27/2014 15:30:56, 135 Bent Down.wav , NEXT
-11/27/2014 15:30:58, 136 Better Off.wav , NEXT
-11/27/2014 15:30:59, 137 Between the Earth and Sky.wav , NEXT
-11/27/2014 15:31:01, 138 Biglaan.wav , NEXT
-11/27/2014 15:31:02, 139 Bihag.wav , NEXT
-11/27/2014 15:34:55, 14 24 Hours.wav AUTOMATIC
-11/27/2014 15:38:30, 140 Bikining Itim.wav AUTOMATIC
-11/27/2014 15:40:41, 141 Bilog Ang Mundo.wav , NEXT
-11/27/2014 15:40:42, 142 Binibini.wav , NEXT
-11/27/2014 15:40:44, 143 Bitin Si Honey.wav , NEXT
-11/27/2014 15:40:45, 144 Bitiw.wav , NEXT
-11/27/2014 15:44:00, 145 Bitter.wav AUTOMATIC
-11/27/2014 15:44:21, 146 Bituing Walang Ningning.wav , NEXT
-11/27/2014 15:44:23, 147 Biyahe Tayo.wav , NEXT
-11/27/2014 15:44:24, 148Blanket.wav , NEXT
-11/27/2014 15:44:25, 149 Bleed.wav , NEXT
-11/27/2014 15:44:26, 15 2nd Floor.wav , NEXT
-11/27/2014 15:44:28, 150 Blue Jeans.wav , NEXT
-11/27/2014 15:48:11, 151 Blue Sky.wav, AUTOMATIC
-11/27/2014 15:52:54, 152 Borrowed Time.wav, AUTOMATIC
-11/27/2014 15:56:43, 153 Boundless.wav, AUTOMATIC
-11/27/2014 16:00:36, 154 Break Me.wav, AUTOMATIC
-11/27/2014 16:05:06, 155 Breathe Through The Glass.wav, AUTOMATIC
-11/27/2014 16:08:58, 156 Bridges.wav, AUTOMATIC
-11/27/2014 16:10:42, 157 Bright Side.wav , NEXT
-11/27/2014 16:10:44, 158 Bring Me Down.wav , NEXT
-11/27/2014 16:10:44, 159 Broken Into Pieces.wav , NEXT
-11/27/2014 16:10:46, 16 4 Years, 9 Months.wav , NEXT
-11/27/2014 16:10:47, 160 Broken Sonnet.wav , NEXT
-11/27/2014 16:15:25, 161 Buenos Aires.wav, AUTOMATIC
-11/27/2014 16:22:15, 162 Bulag,Pipi at Bingi.wav , NEXT
-11/27/2014 16:22:16, 163 Bulong.wav , NEXT
-11/27/2014 16:26:02, 164 Buloy.wav, AUTOMATIC
-11/27/2014 16:29:41, 165 Bumalik Ka Lang.wav, AUTOMATIC
-11/27/2014 16:31:40, 166 Bumalik Ka Na Sa 'Kin.wav AUTOMATIC
-11/27/2014 16:34:36, 167 Burnout.wav, AUTOMATIC
-11/27/2014 16:37:36, 168 Butterfly Carnival.wav, AUTOMATIC
-11/27/2014 16:40:45, 169 Butterfly.wav, AUTOMATIC
-11/27/2014 16:43:55, 17 8 Pa.wav, AUTOMATIC
-11/27/2014 16:47:54, 170 Buy One Take Two.wav, AUTOMATIC
-11/27/2014 16:49:13, 171 Bwakana.wav , NEXT
-11/27/2014 16:49:14, 172 Bye Bye Na.wav , NEXT
-11/27/2014 16:49:15, 173 C As On Scissors.wav , NEXT
-11/27/2014 16:49:15, 174 Call Upon.wav , NEXT
-11/27/2014 16:49:16, 175 Camping Indoors.wav , NEXT
-11/27/2014 16:49:17, 176 Can This Be Love.wav , NEXT
-11/27/2014 16:49:17, 177 Can't Cry Hard Enough.wav , NEXT
-11/27/2014 16:52:59, 178 Can't Do That.wav , NEXT
-11/27/2014 16:52:59, 179 Can't Let You Go.wav , NEXT
-11/27/2014 16:53:00, 18 A Break in a Prayer.wav , NEXT
-11/27/2014 16:53:02, 180 Caring Thoughtful.wav , NEXT
-11/27/2014 16:53:02, 181 Cast Of Clowns.wav , NEXT
-11/27/2014 16:53:02, 182 Castaway.wav , NEXT
-11/27/2014 16:53:03, 183 Chickboy (Agent X44 Theme).wav , NEXT
-11/27/2014 16:53:04, 184 Chicosci Vampire Social Club.wav , NEXT
-11/27/2014 16:53:06, 185 Chikinini.wav , NEXT
-11/27/2014 16:53:06, 186 Chiksilog.wav , NEXT
-11/27/2014 16:53:08, 187 Children of the Sun.wav , NEXT
-11/27/2014 16:53:08, 188 China Eyes.wav , NEXT
-11/27/2014 16:53:09, 189 Chinelas.wav , NEXT
-11/27/2014 16:53:09, 19 A City Of Sleeping Hearts.wav , NEXT
-11/27/2014 16:53:10, 190 Choco Latte.wav , NEXT
-11/27/2014 16:53:12, 191 Christmas In Our Hearts.wav , NEXT
-11/27/2014 16:53:13, 192 Cinderella.wav , NEXT
-11/27/2014 16:53:13, 193 Circle.wav , NEXT
-11/27/2014 16:53:15, 194 Circus Jesus.wav , NEXT
-11/27/2014 16:53:15, 195 Clara's Eyes.wav , NEXT
-11/27/2014 16:53:16, 196 Close To The End.wav , NEXT
-11/27/2014 16:53:16, 197 Closure.wav , NEXT
-11/27/2014 16:53:17, 198 Clown.wav , NEXT
-11/27/2014 16:56:41,  ************** CLOSED PLAYER ***************** 
-11/27/2014 16:57:08,  ************** OPENED PLAYER ***************** 
-11/27/2014 16:57:20,  ************** CLOSED PLAYER ***************** 
+01/22/2015 10:55:08, 'Di Na Mababawi.wav, MANUAL
+01/22/2015 10:58:22, 'Pag-Undress Na 'Ko (Remix).wav, AUTOMATIC
+01/22/2015 11:02:22, 'Till.wav, AUTOMATIC
+01/22/2015 11:06:15, 'Wag Na 'Wag (ft. Vina Morales).wav, AUTOMATIC
+01/22/2015 11:10:34, 04.wav, AUTOMATIC
+01/22/2015 11:12:41, 10.wav, AUTOMATIC
+01/22/2015 11:17:22, 14.wav, AUTOMATIC
+01/22/2015 11:23:24, 2 Na.wav, AUTOMATIC
+01/22/2015 11:27:01, 2 Step Marv.wav, AUTOMATIC
+01/22/2015 11:32:18, 20 Fingers Putang Ina Mo.wav, AUTOMATIC
+01/22/2015 11:36:04, 21 & Counting.wav, AUTOMATIC
+01/22/2015 11:41:03, 214.wav, AUTOMATIC
+01/22/2015 11:45:49, 22.wav, AUTOMATIC
+01/22/2015 11:49:29, 24 Hours.wav, AUTOMATIC
+01/22/2015 11:53:29, 2nd Floor.wav, AUTOMATIC
+01/22/2015 11:57:39, 4 Years, 9 Months.wav, AUTOMATIC
+01/22/2015 11:58:17, 8 Pa.wav, AUTOMATIC
+01/22/2015 12:03:04, A Break in a Prayer.wav, AUTOMATIC
+01/22/2015 12:07:00, A City Of Sleeping Hearts.wav, AUTOMATIC
+01/22/2015 12:12:19, A Habit Of Rest Brings Nothing.wav, AUTOMATIC
+01/22/2015 12:16:23, A Mass For The End Of Time.wav, AUTOMATIC
+01/22/2015 12:20:44, A New Tattoo.wav, AUTOMATIC
+01/22/2015 12:24:41, A Perfect Christmas.wav, AUTOMATIC
+01/22/2015 12:28:55, A Promise.wav, AUTOMATIC
+01/22/2015 12:32:03, Abot Kamay (Sunsilk Theme).wav, AUTOMATIC
+01/22/2015 12:34:43, Abot Langit.wav, AUTOMATIC
+01/22/2015 12:38:48, Across The Universe.wav, AUTOMATIC
+01/22/2015 12:43:16, Adamant.wav, AUTOMATIC
+01/22/2015 12:46:17, Afraid For Love To Fade.wav, AUTOMATIC
+01/22/2015 12:49:19, Agent Orange  (Studio Version).wav, AUTOMATIC
+01/22/2015 12:53:30, Agent Orange (Acoustic).wav, AUTOMATIC
+01/22/2015 12:58:03, AIDS.wav, AUTOMATIC
+01/22/2015 13:01:57, Akala.wav, AUTOMATIC
+01/22/2015 13:05:01, Akap.wav, AUTOMATIC
+01/22/2015 13:10:41, Akin Ka Na Lang.wav, AUTOMATIC
+01/22/2015 13:13:52, Ako'y Iyo Ika'y Akin.wav, AUTOMATIC
+01/22/2015 13:19:00, Alaala Ni Batman.wav, AUTOMATIC
+01/22/2015 13:24:20, Alab Ng Puso.wav, AUTOMATIC
+01/22/2015 13:30:53, Alam Kong Di Ako, Okey Lang.wav, AUTOMATIC
+01/22/2015 13:34:58, Alam Mo Na Yun.wav, AUTOMATIC
+01/22/2015 13:37:29, Alapaap.wav, AUTOMATIC
+01/22/2015 13:41:46, Alay Sa Mga Nagkamalay Noong Dekada Nobenta.wav, AUTOMATIC
+01/22/2015 13:45:15, Ale.wav, AUTOMATIC
+01/22/2015 13:49:06, Alert The Armory.wav, AUTOMATIC
+01/22/2015 13:52:31, Alipin.wav, AUTOMATIC
+01/22/2015 13:56:52, Alive.wav, AUTOMATIC
+01/22/2015 14:01:25, All I Need.wav, AUTOMATIC
+01/22/2015 14:04:36, All I Want.wav, AUTOMATIC
+01/22/2015 14:09:14, All of My Life.wav, AUTOMATIC
+01/22/2015 14:13:18, All We Need.wav, AUTOMATIC
+01/22/2015 14:17:23, Almost Over You.wav, AUTOMATIC
+01/22/2015 14:20:56, Alpha Beta Omega.wav, AUTOMATIC
+01/22/2015 14:26:18, Alumni Homecoming.wav, AUTOMATIC
+01/22/2015 14:31:00, Amakakeru Ryu No Hirameki.wav, AUTOMATIC
+01/22/2015 14:34:28, Ambisyoso.wav, AUTOMATIC
+01/22/2015 14:38:39, American Junk.wav, AUTOMATIC
+01/22/2015 14:41:26, An Angel.wav, AUTOMATIC
+01/22/2015 14:46:07, An Interlude Between Closeness.wav, AUTOMATIC
+01/22/2015 14:46:25, Anak Ng Kuwan.wav, AUTOMATIC
+01/22/2015 14:50:14, Ang Huling El-Bimbo.wav, AUTOMATIC
+01/22/2015 14:56:19, Ang Pag-ibig Kong Ito.wav, AUTOMATIC
+01/22/2015 14:57:54, Ang Pagibig Kong Ito.wav, AUTOMATIC
+01/22/2015 15:01:55, Angel sa Lupa.wav, AUTOMATIC
+01/22/2015 15:05:35, Anino Mo.wav, AUTOMATIC
+01/22/2015 15:10:38, Anino.wav, AUTOMATIC
+01/22/2015 15:17:04, Anna.wav, AUTOMATIC
+01/22/2015 15:21:44, Annie Batungbakal (ft. Marcus).wav, AUTOMATIC
+01/22/2015 15:25:08, Another Minute Until Ten.wav, AUTOMATIC
+01/22/2015 15:29:05, Answer To My Prayer.wav, AUTOMATIC
+01/22/2015 15:33:15, Anything For Two.wav, AUTOMATIC
+01/22/2015 15:36:24, Apl Song.wav, AUTOMATIC
+01/22/2015 15:39:20, Arigatou Tomodachi.wav, AUTOMATIC
+01/22/2015 15:42:42, Arise 2000.wav, AUTOMATIC
+01/22/2015 15:47:25, Arise.wav, AUTOMATIC
+01/22/2015 15:51:51, As Ocean.wav, AUTOMATIC
+01/22/2015 15:57:21, As The Music Take The Band.wav, AUTOMATIC
+01/22/2015 16:01:53, Assertion.wav, AUTOMATIC
+01/22/2015 16:05:18, At It.wav, AUTOMATIC
+01/22/2015 16:09:31, At The Hop.wav, AUTOMATIC
+01/22/2015 16:12:49, At Your Best (you are loved).wav, AUTOMATIC
+01/22/2015 16:17:45, Atat.wav, AUTOMATIC
+01/22/2015 16:21:35, Atras Abante.wav, AUTOMATIC
+01/22/2015 16:24:40, Away Bati.wav, AUTOMATIC
+01/22/2015 16:28:24, Away.wav, AUTOMATIC
+01/22/2015 16:32:14, Awit Ng Barkada.wav, AUTOMATIC
+01/22/2015 16:35:45, Awit Ng Kabataan.wav, AUTOMATIC
+01/22/2015 16:40:36, Awit ng Pangarap.wav, AUTOMATIC
+01/22/2015 16:45:08, Awit Ng Saya.wav, AUTOMATIC
+01/22/2015 16:48:29, Awit Para Sayo.wav, AUTOMATIC
+01/22/2015 16:52:22, Awitin Mo Isasayaw Ko.wav, AUTOMATIC
+01/22/2015 16:55:21, Ayoko Na.wav, AUTOMATIC
+01/22/2015 17:00:26, Ba't Di Mo na Kaya.wav, AUTOMATIC
+01/22/2015 17:04:13, Babae Po Ako (Di Ako Bakla).wav, AUTOMATIC
+01/22/2015 17:08:02, Babalik Ka Rin.wav, AUTOMATIC
+01/22/2015 17:12:18, Baby Now That I Found You.wav, AUTOMATIC
+01/22/2015 17:16:42, Back To Me.wav, AUTOMATIC
+01/22/2015 17:21:07, Bad News Brown.wav, AUTOMATIC
+01/22/2015 17:23:47, Bagsakan.wav, AUTOMATIC
+01/22/2015 17:27:17, Bahala Ka.wav, AUTOMATIC
+01/22/2015 17:31:19, Bahala Na.wav, AUTOMATIC
+01/22/2015 17:36:58, Bahay Kubo.wav, AUTOMATIC
+01/22/2015 17:38:39, Baka Ikaw (Sana Nga).wav, AUTOMATIC
+01/22/2015 17:42:38, Baka Naman.wav, AUTOMATIC
+01/22/2015 17:47:15, Bakit Ang Babae.wav, AUTOMATIC
+01/22/2015 17:51:13, Bakit Ang Pangit Pangit Mo.wav, AUTOMATIC
+01/22/2015 17:54:07, Bakit Ba Ganyan (ft. Dina Bonnevie).wav, AUTOMATIC
+01/22/2015 17:55:53,  ************** CLOSED PLAYER ***************** 
+01/29/2015 09:22:56,  ************** OPENED PLAYER ***************** 
+01/29/2015 09:23:26, Your Song.wav, MANUAL
+01/29/2015 09:23:32, Dalangin.wav, MANUAL
+01/29/2015 09:27:48, Daliri.wav, AUTOMATIC
+01/29/2015 09:32:00, Darating.wav, AUTOMATIC
+01/29/2015 09:37:17, Darkness Fell.wav, AUTOMATIC
+01/29/2015 09:42:47, Dayang Dayang (Ilocano Version).wav, AUTOMATIC
+01/29/2015 09:46:46, Deadma.wav, AUTOMATIC
+01/29/2015 09:50:36, Dear Ana.wav, AUTOMATIC
+01/29/2015 09:54:54, Dekada 90.wav, AUTOMATIC
+01/29/2015 10:00:48, Deliverance (Acoustic).wav, AUTOMATIC
+01/29/2015 10:05:15, Deliverance.wav, AUTOMATIC
+01/29/2015 10:09:33, Delubyo.wav, AUTOMATIC
+01/29/2015 10:11:58, Di Karapatdapat.wav, AUTOMATIC
+01/29/2015 10:17:00, Di Ko Na Mapipigilan.wav, AUTOMATIC
+01/29/2015 10:20:48, Di Na Iibig Pa.wav, AUTOMATIC
+01/29/2015 10:24:51, Di Na Natuto.wav, AUTOMATIC
+01/29/2015 10:29:02, Di Tayo Titigil.wav, AUTOMATIC
+01/29/2015 10:33:45, Dim the Headlights.wav, AUTOMATIC
+01/29/2015 10:37:46, Dinamayan.wav, AUTOMATIC
+01/29/2015 10:42:01, Dinner At 6.wav, AUTOMATIC
+01/29/2015 10:47:43, Director's Cut.wav, AUTOMATIC
+01/29/2015 10:52:34, Disco Fever.wav, AUTOMATIC
+01/29/2015 10:58:08, Disconnected.wav, AUTOMATIC
+01/29/2015 11:01:10, Do I Need A Reason.wav, AUTOMATIC
+01/29/2015 11:05:08, Do You Know The Feeling.wav, AUTOMATIC
+01/29/2015 11:08:56, Doll's Head Master.wav, AUTOMATIC
+01/29/2015 11:12:49, Don't  Touch My Birdie.wav, AUTOMATIC
+01/29/2015 11:17:33, Don't Cry Out Loud.wav, AUTOMATIC
+01/29/2015 11:22:08, Doo Bidoo.wav, AUTOMATIC
+01/29/2015 11:26:12, Doon Lang.wav, AUTOMATIC
+01/29/2015 11:30:37, Dorothy.wav, AUTOMATIC
+01/29/2015 11:32:33, Downside Risk.wav, AUTOMATIC
+01/29/2015 11:37:11, Dragonfly.wav, AUTOMATIC
+01/29/2015 11:41:58, Dukha (Remix).wav, AUTOMATIC
+01/29/2015 11:47:13, Dukha.wav, AUTOMATIC
+01/29/2015 11:50:31, DV.wav, AUTOMATIC
+01/29/2015 11:53:18, DVD X.wav, AUTOMATIC
+01/29/2015 11:56:34, Eager Angels.wav, AUTOMATIC
+01/29/2015 12:00:32, Eddie Song.wav, AUTOMATIC
+01/29/2015 12:04:24, Elektra.wav, AUTOMATIC
+01/29/2015 12:07:03, Elesi.wav, AUTOMATIC
+01/29/2015 12:12:03, Endless, a Silent Whisper.wav, AUTOMATIC
+01/29/2015 12:16:02, Enemy.wav, AUTOMATIC
+01/29/2015 12:21:23, ERT.wav, AUTOMATIC
+01/29/2015 12:25:38, Escape The Hurt.wav, AUTOMATIC
+01/29/2015 12:30:40, Esem.wav, AUTOMATIC
+01/29/2015 12:34:23, Especially for You.wav, AUTOMATIC
+01/29/2015 12:38:09, Estella.wav, AUTOMATIC
+01/29/2015 12:42:24, Eternal Flame.wav, AUTOMATIC
+01/29/2015 12:45:45, Everlasting Love.wav, AUTOMATIC
+01/29/2015 12:50:13, Evil Clown.wav, AUTOMATIC
+01/29/2015 12:55:07, Ewan Ko.wav, AUTOMATIC
+01/29/2015 12:58:44, Ewan.wav, AUTOMATIC
+01/29/2015 13:01:39, F.U..wav, AUTOMATIC
+01/29/2015 13:05:11, Fall For You (Live).wav, AUTOMATIC
+01/29/2015 13:10:43, Fallen Of Deaf Ears.wav, AUTOMATIC
+01/29/2015 13:14:33, Fallin.wav, AUTOMATIC
+01/29/2015 13:18:59, Falling Inlove with Marilyn.wav, AUTOMATIC
+01/29/2015 13:22:37, February.wav, AUTOMATIC
+01/29/2015 13:25:04, Fininger.wav, AUTOMATIC
+01/29/2015 13:28:33, Firewoman.wav, AUTOMATIC
+01/29/2015 13:32:16, First Day Funk.wav, AUTOMATIC
+01/29/2015 13:34:47, First Day High.wav, AUTOMATIC
+01/29/2015 13:37:50, First Love Never Dies.wav, AUTOMATIC
+01/29/2015 13:40:59, First Of Summer.wav, AUTOMATIC
+01/29/2015 13:44:33, Fly Me To The Moon.wav, AUTOMATIC
+01/29/2015 13:47:47, Focus.wav, AUTOMATIC
+01/29/2015 13:52:55, Foolish Heart (Live).wav, AUTOMATIC
+01/29/2015 13:57:29, Foolish Heart.wav, AUTOMATIC
+01/29/2015 14:02:06, For My Dearly Departed.wav, AUTOMATIC
+01/29/2015 14:07:29, For Myself.wav, AUTOMATIC
+01/29/2015 14:11:18, For Tonight.wav, AUTOMATIC
+01/29/2015 14:15:48, For You.wav, AUTOMATIC
+01/29/2015 14:19:33, Forever (ft. Regine Velasquez).wav, AUTOMATIC
+01/29/2015 14:23:35, Forever Girl.wav, AUTOMATIC
+01/29/2015 14:27:24, Forever is Not As Long As It Used to Be.wav, AUTOMATIC
+01/29/2015 14:31:39, Forever More.wav, AUTOMATIC
+01/29/2015 14:37:23, Forever's Not Enough.wav, AUTOMATIC
+01/29/2015 14:41:53, Forevermore (Live).wav, AUTOMATIC
+01/29/2015 14:47:08, Forevermore.wav, AUTOMATIC
+01/29/2015 14:52:50, Forget.wav, AUTOMATIC
+01/29/2015 14:55:25, Frailty.wav, AUTOMATIC
+01/29/2015 14:59:27, Friend of Mine.wav, AUTOMATIC
+01/29/2015 15:02:35, From The Start.wav, AUTOMATIC
+01/29/2015 15:06:51, Fruit Cake.wav, AUTOMATIC
+01/29/2015 15:11:31, Fuck You.wav, AUTOMATIC
+01/29/2015 15:16:44, Futile.wav, AUTOMATIC
+01/29/2015 15:18:22, Gemini.wav, AUTOMATIC
+01/29/2015 15:21:55, Genesis.wav, AUTOMATIC
+01/29/2015 15:24:32, Get Away.wav, AUTOMATIC
+01/29/2015 15:29:30, Get Down.wav, AUTOMATIC
+01/29/2015 15:33:44, Get Me.wav, AUTOMATIC
+01/29/2015 15:37:00, Ghetto Kyote.wav, AUTOMATIC
+01/29/2015 15:40:42, Gift Of Tongue.wav, AUTOMATIC
+01/29/2015 15:44:24, Gin Pomelo.wav, AUTOMATIC
+01/29/2015 15:47:03, Girl From Ipanema.wav, AUTOMATIC
+01/29/2015 15:49:30, Girlfriend.wav, AUTOMATIC
+01/29/2015 15:54:34, Gising Na Kaibigan.wav, AUTOMATIC
+01/29/2015 15:58:09, Gising Na.wav, AUTOMATIC
+01/29/2015 16:03:18,  ************** CLOSED PLAYER ***************** 

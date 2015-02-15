@@ -4,6 +4,7 @@
  */
 package bavaria;
 
+import java.awt.Frame;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -12,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import javazoom.jlgui.player.amp.Player;
 import model.Recommendation;
 import model.UtilityMatrix;
 
@@ -129,7 +131,9 @@ public class Tracker extends javax.swing.JFrame {
     private void recoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recoButtonActionPerformed
         UtilityMatrix um = new UtilityMatrix();
         Recommendation reco = new Recommendation(um);
-        reco.Recommend();
+        reco.generatePlaylist();
+        Player recommended= new Player(null, new Frame("Recommended Playlist"));;
+        recommended.loadPlaylist("recommend.m3u");
     }//GEN-LAST:event_recoButtonActionPerformed
 
     public void addText(String str)

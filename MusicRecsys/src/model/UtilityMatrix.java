@@ -11,7 +11,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.sql.Timestamp;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -25,13 +27,14 @@ public class UtilityMatrix {
     private Scanner scan;
     private String line, token[];
     private SimpleDateFormat sd;
+    private Timestamp lastUsed = new Timestamp(0);
     
     public UtilityMatrix(){
         try{
+            readFromFile();
             refreshDay();
             refreshMonth();
-            readFromFile();
-        }catch(FileNotFoundException e){
+        }catch(FileNotFoundException | NullPointerException e){
             matrix = new LinkedList<>();
         }
         parseUserInfo();
@@ -41,40 +44,51 @@ public class UtilityMatrix {
     private boolean readFromFile() throws FileNotFoundException{
         int ctr=0;
         matrix = new LinkedList<>();
-        scan = new Scanner(new File("UtilityMatrix.csv"));
-        sd = new SimpleDateFormat("yyyy/MM/dd");
-        scan.nextLine();
+        scan = new Scanner(new File("UtilityMatrix.mrs"));
+        sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
-        while(scan.hasNext()){
-            line = scan.nextLine();
-            token = line.split(",");
-            temp = new UtilityRow();
-                
-            temp.setID(ctr);
-            temp.setName(token[1]);
-            temp.setPlayMethod(Double.parseDouble(token[2]));
-            temp.setPlayedDay(Integer.parseInt(token[3]));
-            temp.setPlayedWeek(Integer.parseInt(token[4]));
-            temp.setPlayedEver(Integer.parseInt(token[5]));
-            temp.setSkipped(Double.parseDouble(token[6]));
-            matrix.addLast(temp);
-            ctr++;
+        try{
+            lastUsed = new Timestamp(sd.parse(scan.nextLine()).getTime());
+        }catch(ParseException e){
+            System.out.println("Error parsing date");
         }
+            scan.nextLine();
+
+            while(scan.hasNext()){
+                line = scan.nextLine();
+                token = line.split(",");
+                temp = new UtilityRow();
+
+                    temp.setID(ctr);
+                    temp.setName(token[1]);
+                    temp.setPlayMethod(Double.parseDouble(token[2]));
+                    temp.setPlayedDay(Integer.parseInt(token[3]));
+                    temp.setPlayedWeek(Integer.parseInt(token[4]));
+                    temp.setPlayedEver(Integer.parseInt(token[5]));
+                    temp.setSkipped(Double.parseDouble(token[6]));
+                    System.out.println(temp.getID());
+                    matrix.addLast(temp);
+                    ctr++;
+            }
         return true;
     }
     
     public void writeToFile(){
-        File file = new File("UtilityMatrix.csv");
+        File file = new File("data/UtilityMatrix.mrs");
+        sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
         try{
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
-
-            bf.write("name, ");
-            bf.write("playMethod, ");
-            bf.write("playedDay, ");
-            bf.write("playedEver, ");
-            bf.write("playedWeek, ");
-            bf.write("skipped, ");
+            
+            bf.write(sd.format(new java.util.Date()));
+            bf.newLine();
+            bf.write("ID,");
+            bf.write("name,");
+            bf.write("playMethod,");
+            bf.write("playedDay,");
+            bf.write("playedEver,");
+            bf.write("playedWeek,");
+            bf.write("skipped");
             bf.newLine();
             
             
@@ -133,58 +147,65 @@ public class UtilityMatrix {
     }
 
     //Issue: Problem if user pauses. Pauses found. Problem now is how to get time paused. 
-    public double computeSkipped(long songSec){
+    private double computeSkipped(long songSec){
         //1 - (song length played - length paused)/total song length
         //return value wherein 0 <= value < 1
         return 0;
     }
     
     public void parseUserInfo(){
-        File file = new File("old_userinfo.txt");
+        //File file = new File("old_userinfo.txt");
+        Timestamp currentEntry; 
         BufferedWriter bw;
+        int ctr = 0;
+        sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
         try{
-            bw = new BufferedWriter(new FileWriter(file));
+            //bw = new BufferedWriter(new FileWriter(file));
             scan = new Scanner(new File("userinfo.txt"));
             
             while(scan.hasNext()){
                 temp = new UtilityRow();
                 line = scan.nextLine();
                 token = line.split(",");
+                currentEntry = new Timestamp(sd.parse(token[0]).getTime());
                 
                 if(!(line.contains("OPENED PLAYER") || line.contains("CLOSED PLAYER"))){
-                    temp.setName(token[1]);
-                    temp.setPlayedDay(1);
-                    temp.setPlayedEver(1);
-                    temp.setPlayedWeek(1);
+                    if(!currentEntry.before(lastUsed)){
+                        temp.setID(ctr);
+                        temp.setName(token[1]);
+                        temp.setPlayedDay(1);
+                        temp.setPlayedEver(1);
+                        temp.setPlayedWeek(1);
 
-                    if(doesSongExist(temp)==true){
-                        temp = searchSongByName(temp);
-                        temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
-                        temp.setSkipped(0);
-                        updateMatrix(temp);
-                    }else{
-                        temp.setPlayMethod(0.1+playMethodValue(line));
-                        temp.setSkipped(0);
-                        matrix.add(temp);
+                        if(doesSongExist(temp)==true){
+                            temp = searchSongByName(temp);
+                            temp.setPlayMethod(temp.getPlayMethod()+playMethodValue(line));
+                            temp.setSkipped(0);
+                            updateMatrix(temp);
+                        }else{
+                            temp.setPlayMethod(0.1+playMethodValue(line));
+                            temp.setSkipped(0);
+                            matrix.add(temp);
+                        }
+                            //bw.write(line);
+                            //bw.newLine();
+                        ctr++;
                     }
-                        bw.write(line);
-                        bw.newLine();
                 }
         }
-            bw.close();
-        }catch(IOException e){
+            //bw.close();
+        }catch(IOException | ParseException e){
             e.printStackTrace();
         }
         
     }
     
     //Still need to be tested.
-    private void refreshDay() throws FileNotFoundException{
+    private void refreshDay() throws FileNotFoundException, NullPointerException{
         String line, token[];
         Scanner scan;
         int currentDay=0, previousDay=0;
-        
             scan = new Scanner(new File("userinfo.txt"));
             while(scan.hasNext()){
                 line = scan.nextLine();
@@ -197,14 +218,15 @@ public class UtilityMatrix {
             
             if(currentDay != previousDay){
                 //for-loop does the actual resetting of playedDate
+                //Null Pointer exception
                 for(int ctr=0; ctr<matrix.size(); ctr++){
                     matrix.get(ctr).setPlayedDay(0);
                 }
             }
+            
     }
     
     private void refreshWeek(){
-
         for(int ctr=0; ctr<matrix.size(); ctr++){
             matrix.get(ctr).setPlayedWeek(0);
         }
@@ -215,7 +237,7 @@ public class UtilityMatrix {
         Scanner scan;
         
         try{
-            scan = new Scanner(new File("userinfo.txt"));
+            scan = new Scanner(new File("data/userinfo.txt"));
             while(scan.hasNext()){
                 line = scan.nextLine();
                 if(line.contains("OPENED PLAYER")){

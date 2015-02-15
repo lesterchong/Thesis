@@ -13,10 +13,9 @@ import javazoom.jlgui.player.amp.Player;
  * @author Arturo III
  */
 public class Main {
+    private static Player theGUI;
     
-    public static void main(String args[])
-    {
-        Player theGUI;
+    public static void main(String args[]){
         Tracker t;
         String currentArg = null;
         String currentValue = null;
@@ -31,10 +30,7 @@ public class Main {
 	// Adds controls for front-end to low-level player.
 	theGUI.setController(bplayer);
         theGUI.setTracker(t);
-        
-        //Added by Chong
-        theGUI.loadPlaylist("reco.m3u");
-        
+        theGUI.loadPlaylist("default.m3u");
 	// Display.
         theGUI.show();
         
@@ -42,4 +38,7 @@ public class Main {
         //if (autoRun == true) theGUI.pressStart();
     }
     
+    public Player getCurrentPlayer(){
+        return theGUI;
+    }
 }

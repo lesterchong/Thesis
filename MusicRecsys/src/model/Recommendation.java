@@ -49,7 +49,7 @@ public class Recommendation {
     
     private void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
-        scan = new Scanner(new File("Song Attributes Temp.arff"));
+        scan = new Scanner(new File("data/Song Attributes Values.arff"));
         
         for(int ctr = 1; ctr <= 195; ctr++){
             scan.nextLine();
@@ -166,15 +166,16 @@ public class Recommendation {
         
         for(int ctr=0; ctr<list.size(); ctr++){
             filename = getSongNameFromList(list.get(ctr).getId());
-            item = new PlaylistItem(filename, "Song Repository/"+filename, 0, true);
+            //Must change during deployment
+            item = new PlaylistItem(filename+".wav", "Song Repository\\"+filename+".wav", -1, true);
             playlist.appendItem(item);
         }
-        //playlist.save("recommend.m3u");
+        playlist.save("recommend.m3u");
         return playlist;
     }
     
     private String getSongNameFromList(int index){
-        File file = new File("Song Name Database Temp.txt");
+        File file = new File("data/Song Name Database.txt");
         Scanner scan;
         String line="";
         try{
