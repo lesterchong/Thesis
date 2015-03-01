@@ -49,7 +49,7 @@ public class Recommendation {
     
     private void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
-        scan = new Scanner(new File("data/Song Attributes Values.arff"));
+        scan = new Scanner(new File("data/Song Attribute Values.arff"));
         
         for(int ctr = 1; ctr <= 195; ctr++){
             scan.nextLine();
