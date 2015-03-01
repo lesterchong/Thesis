@@ -26,7 +26,7 @@ public class Recommendation {
     private LinkedList <SongInstance> three;
     private Scanner scan;
     private String line, tokens[];
-    private int counter = 1;
+    private int counter = 0;
     private SongInstance temp;
     private LinkedList <Float> tempattributes;
     private LinkedList<SongInstance> cluster0;
@@ -110,8 +110,7 @@ public class Recommendation {
         int id;
         
         for(int ctr = 0; ctr < topthree.size(); ctr++){
-            tokens = topthree.get(ctr).getName().split(" ");
-            id = Integer.parseInt(tokens[1]);
+            id = topthree.get(ctr).getID();
             
             for(int ctr2 = 0; ctr2 < instances.size(); ctr2++){
                 
