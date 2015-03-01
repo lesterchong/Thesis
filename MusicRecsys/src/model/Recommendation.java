@@ -51,7 +51,7 @@ public class Recommendation {
         instances = new LinkedList<>();
         scan = new Scanner(new File("data/Song Attribute Values.arff"));
         
-        for(int ctr = 1; ctr <= 195; ctr++){
+        for(int ctr = 1; ctr <= 668; ctr++){
             scan.nextLine();
         }
         while(scan.hasNext()){
