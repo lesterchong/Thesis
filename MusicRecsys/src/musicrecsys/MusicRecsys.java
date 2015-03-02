@@ -4,6 +4,7 @@
  */
 package musicrecsys;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -24,7 +25,8 @@ public class MusicRecsys {
      * @param args the command line arguments
      */
     public static void main(String[] args){
-        UtilityMatrix um = new UtilityMatrix();
+        File file = new File("");
+        System.out.println(file.getAbsolutePath());
         
     }
 }

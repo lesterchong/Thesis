@@ -13,6 +13,7 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Scanner;
+import javazoom.jlgui.basicplayer.BasicPlayer;
 import javazoom.jlgui.player.amp.Player;
 import model.Recommendation;
 import model.UtilityMatrix;
@@ -131,8 +132,10 @@ public class Tracker extends javax.swing.JFrame {
     private void recoButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_recoButtonActionPerformed
         UtilityMatrix um = new UtilityMatrix();
         Recommendation reco = new Recommendation(um);
-        reco.generatePlaylist();
+        BasicPlayer bPlayer= new BasicPlayer();
         Player recommended= new Player(null, new Frame("Recommended Playlist"));;
+        recommended.setController(bPlayer);
+        reco.generatePlaylist();
         recommended.loadPlaylist("recommend.m3u");
     }//GEN-LAST:event_recoButtonActionPerformed
 

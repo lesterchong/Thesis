@@ -159,14 +159,16 @@ public class Recommendation {
     
     public Playlist generatePlaylist(){
         PlaylistItem item;
-        String filename;
+        String filename, directory;
+        File file = new File("");
         Playlist playlist = new BasePlaylist();
         LinkedList<SongInstance> list = Recommend();
         
+        directory = file.getAbsolutePath();
         for(int ctr=0; ctr<list.size(); ctr++){
             filename = getSongNameFromList(list.get(ctr).getId());
             //Must change during deployment
-            item = new PlaylistItem(filename+".wav", "Song Repository\\"+filename+".wav", -1, true);
+            item = new PlaylistItem(filename+".wav", directory+"\\Song Repository\\"+filename+".wav", -1, true);
             playlist.appendItem(item);
         }
         playlist.save("recommend.m3u");
