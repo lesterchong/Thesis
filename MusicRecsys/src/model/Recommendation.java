@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 import java.io.File;
@@ -15,10 +10,25 @@ import javazoom.jlgui.player.amp.playlist.BasePlaylist;
 import javazoom.jlgui.player.amp.playlist.Playlist;
 import javazoom.jlgui.player.amp.playlist.PlaylistItem;
 
-/**
+ /**
  *
  * @author mikeyboy213
  */
+
+ /** 
+ * @file Recommendation.java
+ * 
+ * @brief Contains the class for recommending songs.
+ * 
+ **/ 
+
+ /** 
+ * @class Recommendation
+ * 
+ * @brief Contains the methods for recommending songs to the user.
+ * 
+ * This class is in charge of the whole process of recommendation wherein the song instances are read from the .arff file, clustered, then ranked. After which the ten songs with the lowest Euclidean distance (with the three top utility value songs) from all instances are recommended to the user.
+ */ 
 public class Recommendation {
     private UtilityMatrix matrix;
     private LinkedList <SongInstance> instances;
@@ -34,7 +44,12 @@ public class Recommendation {
     private LinkedList<SongInstance> cluster2;
     private LinkedList<SongInstance> cluster3;
     private float defNumber = 0;
-
+    
+    /**
+    * @brief Constructor of the recommendation class.
+    * 
+    * This constructor is in charge of obtaining the utility matrix values of all song instances which will be used later on for computing the recommendation algorithm.
+    */
     public Recommendation(UtilityMatrix matrix){
         this.matrix = matrix;
         
@@ -47,6 +62,11 @@ public class Recommendation {
         
     }
     
+    /**
+    * @brief Reads the .arff file.
+    * 
+    * This method reads the .arff file and saves the values found in the file into different variables The Cluster() method is also called in this method.
+    */
     private void readFromFile() throws FileNotFoundException{
         instances = new LinkedList<>();
         scan = new Scanner(new File("data/Song Attribute Values.arff"));
@@ -82,7 +102,11 @@ public class Recommendation {
         
     }
     
-    
+    /**
+    * @brief Clusters the song instances.
+    * 
+    * This method clusters the song instances into the four different clusters. The clusters are not explicitly used in the code but instead are used for analyzing the listening behaviors of the users.
+    */
     private void Cluster (LinkedList<SongInstance> list){
         cluster0 = new LinkedList<>();
         cluster1 = new LinkedList<>();
@@ -105,7 +129,13 @@ public class Recommendation {
         }
     }
     
+    /**
+    * @brief Converts the UtilityRow values.
+    * 
+    * This method converts the top three highest utility value UtilityRow instances into SongInstance instances so that it can be used for the computation of the Euclidean distances in the Recommendation class.
+    */
     private LinkedList<SongInstance> Convert(LinkedList <UtilityRow> topthree){
+        
         LinkedList<SongInstance> temp = new LinkedList<>();
         int id;
         
@@ -123,6 +153,11 @@ public class Recommendation {
         return temp;
     }
     
+    /**
+    * @brief Computes for the Euclidean distance
+    * 
+    * This method computes for the Euclidean distance of all the song instances with the three songs with the highest utility values.
+    */
     private void euclideanDistance(SongInstance instance){
         instance.setTempdistance(0);
         /*
@@ -139,6 +174,11 @@ public class Recommendation {
         
     }
     
+    /**
+    * @brief Recommends the songs to the users.
+    * 
+    * This method returns the ten songs with the lowest Euclidean distances to the music player so it can be evaluated by the user. This method makes use of the Convert() and EuclideanDistance() methods.
+    */
     public LinkedList <SongInstance> Recommend(){
         LinkedList<UtilityRow> topThree = matrix.topThreeUtility();
         three = Convert(topThree);
@@ -157,6 +197,11 @@ public class Recommendation {
         return topten;
     }
     
+    /**
+    * @brief Generates a play list with the top ten songs.
+    * 
+    * This method generates the play list containing the top ten songs returned by the Recommend() method. The Recommend() and GetSongNameFromList() methods are called in this method.
+    */
     public Playlist generatePlaylist(){
         PlaylistItem item;
         String filename, directory;
@@ -175,6 +220,11 @@ public class Recommendation {
         return playlist;
     }
     
+    /**
+    * @brief Gets the song names from a text file.
+    * 
+    * This method gets the song names of the songs that are to be recommended. The song names from a text file and is matched to the songs from the file repository for recommendation.
+    */
     private String getSongNameFromList(int index){
         File file = new File("data/Song Name Database.txt");
         Scanner scan;
