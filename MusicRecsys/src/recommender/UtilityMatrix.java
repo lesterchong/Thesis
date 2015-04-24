@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package model;
+package recommender;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -38,6 +38,7 @@ public class UtilityMatrix {
             matrix = new LinkedList<>();
         }
         parseUserInfo();
+        assignName();
         writeToFile();
     }
     
@@ -59,7 +60,7 @@ public class UtilityMatrix {
                 token = line.split(",");
                 temp = new UtilityRow();
 
-                    temp.setID(ctr);
+                    temp.setID(Integer.parseInt(token[0]));
                     temp.setName(token[1]);
                     temp.setPlayMethod(Double.parseDouble(token[2]));
                     temp.setPlayedDay(Integer.parseInt(token[3]));
@@ -78,6 +79,7 @@ public class UtilityMatrix {
         sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
         try{
+            assignName();
             BufferedWriter bf = new BufferedWriter(new FileWriter(file));
             
             bf.write(sd.format(new java.util.Date()));
@@ -148,20 +150,16 @@ public class UtilityMatrix {
 
     //Issue: Problem if user pauses. Pauses found. Problem now is how to get time paused. 
     private double computeSkipped(long songSec){
-        //1 - (song length played - length paused)/total song length
-        //return value wherein 0 <= value < 1
-        return 0;
+        return -(1/2);
     }
     
     public void parseUserInfo(){
-        //File file = new File("old_userinfo.txt");
         Timestamp currentEntry; 
         BufferedWriter bw;
         int ctr = 0;
         sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
         
         try{
-            //bw = new BufferedWriter(new FileWriter(file));
             scan = new Scanner(new File("userinfo.txt"));
             
             while(scan.hasNext()){
@@ -188,13 +186,10 @@ public class UtilityMatrix {
                             temp.setSkipped(0);
                             matrix.add(temp);
                         }
-                            //bw.write(line);
-                            //bw.newLine();
                         ctr++;
                     }
                 }
         }
-            //bw.close();
         }catch(IOException | ParseException e){
             e.printStackTrace();
         }
@@ -280,5 +275,34 @@ public class UtilityMatrix {
         }
         matrix.addAll(list);
         return list;
+    }
+    
+    public LinkedList<UtilityRow> getUtilityMatrix(){
+        return matrix;
+    }
+    
+    private void assignName(){
+        String line;
+        int ctr, ctr2=0;
+        
+        try{
+            for(ctr=0; ctr<matrix.size(); ctr++){
+                ctr2=0;
+                scan = new Scanner(new File("data/Song Name Database.txt"));
+                while(scan.hasNext()){
+                    line = scan.nextLine();
+                    line = line.concat(".wav");
+                    line = line.trim();
+                    matrix.get(ctr).setName(matrix.get(ctr).getName().trim());
+                    if(matrix.get(ctr).getName().equalsIgnoreCase(line)){
+                        matrix.get(ctr).setID(ctr2);                        
+                    }
+                    ctr2++;
+                }
+            }
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+            System.out.println("Hindi Pasok");
+        }
     }
 }

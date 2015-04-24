@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package recommender;
 
 import java.util.LinkedList;
 
@@ -13,6 +13,7 @@ import java.util.LinkedList;
  */
 public class SongInstance {
     private int id;
+    private String name;
     private LinkedList <Float> attributes;
     private String cluster;
     private int x, y;
@@ -100,6 +101,20 @@ public class SongInstance {
      */
     public void setTempdistance(float tempdistance) {
         this.tempdistance = tempdistance;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
     
 }

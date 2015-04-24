@@ -15,8 +15,8 @@ import java.util.Date;
 import java.util.Scanner;
 import javazoom.jlgui.basicplayer.BasicPlayer;
 import javazoom.jlgui.player.amp.Player;
-import model.Recommendation;
-import model.UtilityMatrix;
+import recommender.Recommendation;
+import recommender.UtilityMatrix;
 
 /**
  *
@@ -133,7 +133,8 @@ public class Tracker extends javax.swing.JFrame {
         UtilityMatrix um = new UtilityMatrix();
         Recommendation reco = new Recommendation(um);
         BasicPlayer bPlayer= new BasicPlayer();
-        Player recommended= new Player(null, new Frame("Recommended Playlist"));;
+        Player recommended= new Player(null, new Frame("Recommended Playlist"));
+        bPlayer.addBasicPlayerListener(recommended);
         recommended.setController(bPlayer);
         reco.generatePlaylist();
         recommended.loadPlaylist("recommend.m3u");

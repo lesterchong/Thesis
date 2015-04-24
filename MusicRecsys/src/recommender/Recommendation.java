@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package model;
+package recommender;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,6 +11,8 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javazoom.jlgui.player.amp.playlist.BasePlaylist;
 import javazoom.jlgui.player.amp.playlist.Playlist;
 import javazoom.jlgui.player.amp.playlist.PlaylistItem;
@@ -77,8 +79,8 @@ public class Recommendation {
             counter ++;
         }
         scan.close();
-        
         Cluster(instances);
+        compareFromCluster();
         
     }
     
@@ -151,6 +153,9 @@ public class Recommendation {
         
         Collections.sort(instances, new distanceComparator());
         
+        for(int ctr=0; ctr<instances.size(); ctr++)
+            System.out.println(getSongNameFromList(instances.get(ctr).getId()));
+        
         for(int ctr = 0; ctr < 10; ctr++){
             topten.add(instances.get(ctr));
         }
@@ -167,7 +172,6 @@ public class Recommendation {
         directory = file.getAbsolutePath();
         for(int ctr=0; ctr<list.size(); ctr++){
             filename = getSongNameFromList(list.get(ctr).getId());
-            //Must change during deployment
             item = new PlaylistItem(filename+".wav", directory+"\\Song Repository\\"+filename+".wav", -1, true);
             playlist.appendItem(item);
         }
@@ -191,13 +195,39 @@ public class Recommendation {
         return line;
     }
     
+    public void compareFromCluster(){
+        int a=0,b=0,c=0,d=0;
+        LinkedList<UtilityRow> um = matrix.getUtilityMatrix();
+        for(int ctr =0; ctr < um.size(); ctr++){
+            
+            for(int ctr2=0; ctr2<cluster0.size(); ctr2++){
+                
+                if(um.get(ctr).getID() == cluster0.get(ctr2).getId())
+                    a++;
+            }
+            
+            for(int ctr2=0; ctr2<cluster1.size(); ctr2++){
+                if(um.get(ctr).getID() == cluster1.get(ctr2).getId())
+                    b++;
+            }
+            
+            for(int ctr2=0; ctr2<cluster2.size(); ctr2++){
+                if(um.get(ctr).getID() == cluster2.get(ctr2).getId())
+                    c++;
+            }
+            
+            for(int ctr2=0; ctr2<cluster3.size(); ctr2++){
+                if(um.get(ctr).getID() == cluster3.get(ctr2).getId())
+                    d++;
+            }
+        }
+    }
+    
+    
     class distanceComparator implements Comparator<SongInstance> {
-        
         @Override
         public int compare(SongInstance a, SongInstance b) {
            return a.getTempdistance() < b.getTempdistance() ? -1 : a.getTempdistance() == b.getTempdistance() ? 0 : 1;
-    }
-}
-    
-    
+        }
+    }    
 }
