@@ -1,242 +1,37 @@
-03/01/2015 21:55:38
+04/08/2015 18:05:07
 ID,name,playMethod,playedDay,playedEver,playedWeek,skipped
-0, 'Di Na Mababawi.wav STARTED PLAYLIST,0.1,1,1,1,0.0
-1, 'Pag-Undress Na 'Ko (Remix).wav,2.1,1,1,1,0.0
-2, 'Till.wav,-0.8999999999999999,1,1,1,0.0
-3, 'Wag Na 'Wag (ft. Vina Morales).wav,-0.8999999999999999,1,1,1,0.0
-4, 04.wav,-1.9,1,1,1,0.0
-5, 10.wav,-1.9,1,1,1,0.0
-6, 14.wav,-1.9,1,1,1,0.0
-7, 2 Na.wav,-1.9,1,1,1,0.0
-8, 2 Step Marv.wav,-1.9,1,1,1,0.0
-9, 20 Fingers Putang Ina Mo.wav,-1.9,1,1,1,0.0
-10, 21 & Counting.wav,-1.9,1,1,1,0.0
-11, 214.wav,-1.9,1,1,1,0.0
-12, 22.wav,-1.9,1,1,1,0.0
-13, 24 Hours.wav,-0.9,1,1,1,0.0
-14, 2nd Floor.wav,-1.9,1,1,1,0.0
-15, 4 Years,-1.9,1,1,1,0.0
-16, 8 Pa.wav,-1.9,1,1,1,0.0
-17, A Break in a Prayer.wav,-1.9,1,1,1,0.0
-18, A City Of Sleeping Hearts.wav,-1.9,1,1,1,0.0
-19, A Habit Of Rest Brings Nothing.wav,-1.9,1,1,1,0.0
-20, A Mass For The End Of Time.wav,-1.9,1,1,1,0.0
-21, A New Tattoo.wav,-1.9,1,1,1,0.0
-22, A Perfect Christmas.wav,-1.9,1,1,1,0.0
-23, A Promise.wav,-1.9,1,1,1,0.0
-24, Abot Kamay (Sunsilk Theme).wav,-1.9,1,1,1,0.0
-25, Abot Langit.wav,-0.9,1,1,1,0.0
-26, Across The Universe.wav,1.6,1,1,1,0.0
-27, Adamant.wav,-0.8999999999999999,1,1,1,0.0
-28, Afraid For Love To Fade.wav,-1.9,1,1,1,0.0
-29, Agent Orange  (Studio Version).wav,-1.9,1,1,1,0.0
-30, Agent Orange (Acoustic).wav,-1.9,1,1,1,0.0
-31, AIDS.wav,-1.9,1,1,1,0.0
-32, Akala.wav,-1.9,1,1,1,0.0
-33, Akap.wav,-1.9,1,1,1,0.0
-34, Akin Ka Na Lang.wav,0.09999999999999998,1,1,1,0.0
-35, Ako'y Iyo Ika'y Akin.wav,-1.9,1,1,1,0.0
-36, Alaala Ni Batman.wav,-1.9,1,1,1,0.0
-37, Alab Ng Puso.wav,-1.9,1,1,1,0.0
-38, Alam Kong Di Ako,-1.9,1,1,1,0.0
-39, Alam Mo Na Yun.wav,-1.9,1,1,1,0.0
-40, Alapaap.wav,-1.9,1,1,1,0.0
-41, Alay Sa Mga Nagkamalay Noong Dekada Nobenta.wav,-0.8999999999999999,1,1,1,0.0
-42, Ale.wav,0.10000000000000009,1,1,1,0.0
-43, Alert The Armory.wav,-0.3999999999999999,1,1,1,0.0
-44, Alipin.wav,-0.8999999999999999,1,1,1,0.0
-45, Alive.wav,-0.8999999999999999,1,1,1,0.0
-46, All I Need.wav,-0.8999999999999999,1,1,1,0.0
-47, All I Want.wav,-1.9,1,1,1,0.0
-48, All of My Life.wav,-1.9,1,1,1,0.0
-49, All We Need.wav,-1.9,1,1,1,0.0
-50, Almost Over You.wav,1.1,1,1,1,0.0
-51, Alpha Beta Omega.wav,-1.4,1,1,1,0.0
-52, Alumni Homecoming.wav,-0.8999999999999999,1,1,1,0.0
-53, Amakakeru Ryu No Hirameki.wav,-0.8999999999999999,1,1,1,0.0
-54, Ambisyoso.wav,-0.8999999999999999,1,1,1,0.0
-55, American Junk.wav,-0.8999999999999999,1,1,1,0.0
-56, An Angel.wav,-1.4,1,1,1,0.0
-57, An Interlude Between Closeness.wav,-1.4,1,1,1,0.0
-58, Anak Ng Kuwan.wav,-1.4,1,1,1,0.0
-59, Ang Huling El-Bimbo.wav,-1.4,1,1,1,0.0
-60, Ang Pag-ibig Kong Ito.wav,-1.4,1,1,1,0.0
-61, Ang Pagibig Kong Ito.wav,-1.4,1,1,1,0.0
-62, Angel sa Lupa.wav,-1.4,1,1,1,0.0
-63, Anino Mo.wav,-1.4,1,1,1,0.0
-64, Anino.wav,-1.4,1,1,1,0.0
-65, Anna.wav,-1.4,1,1,1,0.0
-66, Annie Batungbakal (ft. Marcus).wav,-1.4,1,1,1,0.0
-67, Another Minute Until Ten.wav,-1.4,1,1,1,0.0
-68, Answer To My Prayer.wav,-1.4,1,1,1,0.0
-69, Anything For Two.wav,-1.4,1,1,1,0.0
-70, Apl Song.wav,-1.4,1,1,1,0.0
-71, Arigatou Tomodachi.wav,-1.4,1,1,1,0.0
-72, Arise 2000.wav,-1.4,1,1,1,0.0
-73, Arise.wav,-1.4,1,1,1,0.0
-74, As Ocean.wav,-1.4,1,1,1,0.0
-75, As The Music Take The Band.wav,-1.4,1,1,1,0.0
-76, Assertion.wav,-1.4,1,1,1,0.0
-77, At It.wav,-1.4,1,1,1,0.0
-78, At The Hop.wav,-1.4,1,1,1,0.0
-79, At Your Best (you are loved).wav,-1.4,1,1,1,0.0
-80, Atat.wav,-1.4,1,1,1,0.0
-81, Atras Abante.wav,-1.4,1,1,1,0.0
-82, Away Bati.wav,-1.4,1,1,1,0.0
-83, Away.wav,-1.4,1,1,1,0.0
-84, Awit Ng Barkada.wav,-1.4,1,1,1,0.0
-85, Awit Ng Kabataan.wav,-1.4,1,1,1,0.0
-86, Awit ng Pangarap.wav,-1.4,1,1,1,0.0
-87, Awit Ng Saya.wav,-1.4,1,1,1,0.0
-88, Awit Para Sayo.wav,-1.4,1,1,1,0.0
-89, Awitin Mo Isasayaw Ko.wav,-1.4,1,1,1,0.0
-90, Ayoko Na.wav,-1.4,1,1,1,0.0
-91, Ba't Di Mo na Kaya.wav,-1.4,1,1,1,0.0
-92, Babae Po Ako (Di Ako Bakla).wav,-1.4,1,1,1,0.0
-93, Babalik Ka Rin.wav,-1.4,1,1,1,0.0
-94, Baby Now That I Found You.wav,-1.4,1,1,1,0.0
-95, Back To Me.wav,-1.4,1,1,1,0.0
-96, Bad News Brown.wav,-1.4,1,1,1,0.0
-97, Bagsakan.wav,-1.4,1,1,1,0.0
-98, Bahala Ka.wav,-1.4,1,1,1,0.0
-99, Bahala Na.wav,-1.4,1,1,1,0.0
-100, Bahay Kubo.wav,-1.4,1,1,1,0.0
-101, Baka Ikaw (Sana Nga).wav,-1.4,1,1,1,0.0
-102, Baka Naman.wav,-1.4,1,1,1,0.0
-103, Bakit Ang Babae.wav,-1.4,1,1,1,0.0
-104, Bakit Ang Pangit Pangit Mo.wav,-1.4,1,1,1,0.0
-105, Bakit Ba Ganyan (ft. Dina Bonnevie).wav,-1.4,1,1,1,0.0
-106, Bakit Ba Iniibig Ka (ft. Regine Velasquez).wav,-1.4,1,1,1,0.0
-107, Bakit Labis Kitang Mahal.wav,-1.4,1,1,1,0.0
-108, Bakit Ngayon Ka.wav,-1.4,1,1,1,0.0
-109, Bakit Pa Ba.wav,-1.4,1,1,1,0.0
-110, Bakit Pa.wav,-1.4,1,1,1,0.0
-111, Bakit.wav,-1.4,1,1,1,0.0
-112, Bale Wala.wav,-1.4,1,1,1,0.0
-113, Balisong.wav,-1.4,1,1,1,0.0
-114, Balita.wav,-1.4,1,1,1,0.0
-115, Bane.wav,-1.4,1,1,1,0.0
-116, Barkada ko.wav,-1.4,1,1,1,0.0
-117, Barkada Trip.wav,-1.4,1,1,1,0.0
-118, Basang Basa Sa Ulan.wav,-1.4,1,1,1,0.0
-119, Basura 1-1.wav,-1.4,1,1,1,0.0
-120, Basura.wav,-0.9,1,1,1,0.0
-121, Batang-bata Ka Pa.wav,-0.9,1,1,1,0.0
-122, Batibot.wav,-0.9,1,1,1,0.0
-123, Bawal Sa Party.wav,-0.9,1,1,1,0.0
-124, Bawat Bata.wav,-0.9,1,1,1,0.0
-125, Bayan Ko.wav,-0.9,1,1,1,0.0
-126, Be My Number Two.wav,-0.9,1,1,1,0.0
-127, Beast.wav,-0.9,1,1,1,0.0
-128, Beautiful Days.wav,-0.9,1,1,1,0.0
-129, Beauty And Madness.wav,-0.9,1,1,1,0.0
-130, Because of You.wav,-0.9,1,1,1,0.0
-131, Beer.wav,-0.9,1,1,1,0.0
-132, Before I Let You Go.wav,-0.9,1,1,1,0.0
-133, Bent Down.wav,-0.9,1,1,1,0.0
-134, Better Off.wav,-0.9,1,1,1,0.0
-135, Between the Earth and Sky.wav,-0.9,1,1,1,0.0
-136, Biglaan.wav,-0.9,1,1,1,0.0
-137, Bihag.wav,-0.9,1,1,1,0.0
-138, Bikining Itim.wav,-0.9,1,1,1,0.0
-139, Bilog Ang Mundo.wav,-0.9,1,1,1,0.0
-140, Binibini.wav,-0.9,1,1,1,0.0
-141, Bitin Si Honey.wav,-0.9,1,1,1,0.0
-142, Bitiw.wav,-0.9,1,1,1,0.0
-143, Bitter.wav,0.09999999999999998,1,1,1,0.0
-144, Bituing Walang Ningning.wav,-0.9,1,1,1,0.0
-145, Biyahe Tayo.wav,-0.9,1,1,1,0.0
-146, Blanket.wav,-0.9,1,1,1,0.0
-147, Bleed.wav,-0.9,1,1,1,0.0
-148, Blue Jeans.wav,-0.9,1,1,1,0.0
-149, Blue Sky.wav,-0.9,1,1,1,0.0
-150, BMX.wav,0.09999999999999998,1,1,1,0.0
-151, Borrowed Time.wav,-0.9,1,1,1,0.0
-152, Boundless.wav,-0.9,1,1,1,0.0
-153, Break Me.wav,1.1,1,1,1,0.0
-309, Breathe Through The Glass.wav,-0.4,1,1,1,0.0
-310, Bridges.wav,-0.4,1,1,1,0.0
-311, Bright Side.wav,-0.4,1,1,1,0.0
-312, Bring Me Down.wav,-0.4,1,1,1,0.0
-313, Broken Into Pieces.wav,-0.4,1,1,1,0.0
-314, Broken Sonnet.wav,-0.4,1,1,1,0.0
-315, Buenos Aires.wav,-0.4,1,1,1,0.0
-316, Bulag,-0.4,1,1,1,0.0
-317, Bulong.wav,-0.4,1,1,1,0.0
-318, Buloy.wav,-0.4,1,1,1,0.0
-319, Bumalik Ka Lang.wav,-0.4,1,1,1,0.0
-320, Bumalik Ka Na Sa 'Kin.wav,-0.4,1,1,1,0.0
-321, Burnout.wav,-0.4,1,1,1,0.0
-322, Butterfly Carnival.wav,-0.4,1,1,1,0.0
-323, Butterfly.wav,-0.4,1,1,1,0.0
-324, Buy One Take Two.wav,-0.4,1,1,1,0.0
-325, Bwakana.wav,-0.4,1,1,1,0.0
-326, Bye Bye Na.wav,-0.4,1,1,1,0.0
-327, C As On Scissors.wav,-0.4,1,1,1,0.0
-328, Call Upon.wav,-0.4,1,1,1,0.0
-329, Camping Indoors.wav,-0.4,1,1,1,0.0
-330, Can This Be Love.wav,-0.4,1,1,1,0.0
-331, Can't Cry Hard Enough.wav,-0.4,1,1,1,0.0
-332, Can't Do That.wav,-0.4,1,1,1,0.0
-333, Can't Let You Go.wav,-0.4,1,1,1,0.0
-334, Caring Thoughtful.wav,-0.4,1,1,1,0.0
-335, Cast Of Clowns.wav,-0.4,1,1,1,0.0
-336, Castaway.wav,-0.4,1,1,1,0.0
-337, Chickboy (Agent X44 Theme).wav,-0.4,1,1,1,0.0
-338, Chicosci Vampire Social Club.wav,0.6,1,1,1,0.0
-339, Chikinini.wav,0.09999999999999998,1,1,1,0.0
-342, Chiksilog.wav,-0.4,1,1,1,0.0
-343, Children of the Sun.wav,-0.4,1,1,1,0.0
-344, China Eyes.wav,-0.4,1,1,1,0.0
-345, Chinelas.wav,-0.4,1,1,1,0.0
-346, Choco Latte.wav,-0.4,1,1,1,0.0
-347, Christmas In Our Hearts.wav,-0.4,1,1,1,0.0
-348, Cinderella.wav,-0.4,1,1,1,0.0
-349, Circle.wav,-0.4,1,1,1,0.0
-350, Circus Jesus.wav,-0.4,1,1,1,0.0
-351, Clara's Eyes.wav,-0.4,1,1,1,0.0
-352, Close To The End.wav,-0.4,1,1,1,0.0
-353, Closure.wav,-0.4,1,1,1,0.0
-354, Clown.wav,-0.4,1,1,1,0.0
-355, Clutching.wav,-0.4,1,1,1,0.0
-356, Cold Hearted.wav,-0.4,1,1,1,0.0
-357, College (ft. Salbakuta).wav,-0.4,1,1,1,0.0
-358, Collide.wav,-0.4,1,1,1,0.0
-359, Colonized.wav,-0.4,1,1,1,0.0
-360, Coloured Kisses (feat. Trapp of Dice & K9).wav,-0.4,1,1,1,0.0
-361, Come To My Window.wav,-0.4,1,1,1,0.0
-362, Confusion.wav,-0.4,1,1,1,0.0
-363, Constantly.wav,-0.4,1,1,1,0.0
-364, Contajuz.wav,-0.4,1,1,1,0.0
-365, Cool Off.wav,-0.4,1,1,1,0.0
-366, Cotabato.wav,-0.4,1,1,1,0.0
-367, Could you be Messiah.wav,-0.4,1,1,1,0.0
-368, Count Down.wav,-0.4,1,1,1,0.0
-369, Count To Ten.wav,-0.4,1,1,1,0.0
-370, Crazy For You.wav,-0.4,1,1,1,0.0
-371, Crazy Love.wav,-0.4,1,1,1,0.0
-372, Crossliner.wav,-0.4,1,1,1,0.0
-373, Daan.wav,-0.4,1,1,1,0.0
-374, dahan dahan.wav,-0.4,1,1,1,0.0
-375, Dahil Mahal Kita.wav,-0.4,1,1,1,0.0
-376, Dahil Mahal Na Mahal Kita.wav,-0.4,1,1,1,0.0
-377, Dahil Sa Iyo.wav,-0.4,1,1,1,0.0
-378, Dahil sa Ulan.wav,-0.4,1,1,1,0.0
-379, Daisy.wav,-0.4,1,1,1,0.0
-380, Dalangin.wav,-0.4,1,1,1,0.0
-381, Daliri.wav,-0.4,1,1,1,0.0
-382, Darating.wav,-0.4,1,1,1,0.0
-383, Darkness Fell.wav,-0.4,1,1,1,0.0
-384, Dayang Dayang (Ilocano Version).wav,-0.4,1,1,1,0.0
-385, Deadma.wav,-0.4,1,1,1,0.0
-386, Dear Ana.wav,-0.4,1,1,1,0.0
-387, Dekada 90.wav,-0.4,1,1,1,0.0
-388, Deliverance (Acoustic).wav,-0.4,1,1,1,0.0
-389, Deliverance.wav,-0.4,1,1,1,0.0
-390, Delubyo.wav,-0.4,1,1,1,0.0
-391, Di Karapatdapat.wav,-0.4,1,1,1,0.0
-392, Di Ko Na Mapipigilan.wav,-0.4,1,1,1,0.0
-393, Di Na Iibig Pa.wav,-0.4,1,1,1,0.0
-394, Di Na Natuto.wav,-0.4,1,1,1,0.0
-395, Di Tayo Titigil.wav,-0.4,1,1,1,0.0
-574, 'Di Na Mababawi.wav,1.1,1,1,1,0.0
+43,Alert The Armory.wav,0.6000000000000001,1,1,1,0.0
+42,Ale.wav,1.1,1,1,1,0.0
+44,Alipin.wav,-0.4,1,1,1,0.0
+45,Alive.wav,1.1,1,1,1,0.0
+46,All I Need.wav,-0.4,1,1,1,0.0
+47,All I Want.wav,0.6,1,1,1,0.0
+49,All of My Life.wav,0.6,1,1,1,0.0
+48,All We Need.wav,0.6,1,1,1,0.0
+50,Almost Over You.wav,0.6,1,1,1,0.0
+51,Alpha Beta Omega.wav,0.6,1,1,1,0.0
+73,Arise.wav,1.1,1,1,1,0.0
+111,Bakit Pa.wav,1.1,1,1,1,0.0
+131,Because of You.wav,1.1,1,1,1,0.0
+150,Blue Sky.wav,1.1,1,1,1,0.0
+159,Broken Sonnet.wav,1.1,1,1,1,0.0
+160,Buenos Aires.wav,0.6,1,1,1,0.0
+174,Camping Indoors.wav,1.1,1,1,1,0.0
+183,Chicosci Vampire Social Club.wav,1.1,1,1,1,0.0
+184,Chikinini.wav,0.6,1,1,1,0.0
+185,Chiksilog.wav,1.1,1,1,1,0.0
+186,Children of the Sun.wav,0.6,1,1,1,0.0
+195,Close To The End.wav,1.1,1,1,1,0.0
+194,Clara's Eyes.wav,1.1,1,1,1,0.0
+201,Collide.wav,1.1,1,1,1,0.0
+213,Crazy For You.wav,1.1,1,1,1,0.0
+214,Crazy Love.wav,1.1,1,1,1,0.0
+215,Crossliner.wav,-0.4,1,1,1,0.0
+230,Dear Ana.wav,1.1,1,1,1,0.0
+242,Dinner At 6.wav,1.1,1,1,1,0.0
+254,Downside Risk.wav,1.1,1,1,1,0.0
+217,DVD X.wav,1.1,1,1,1,0.0
+259,Eager Angels.wav,-0.4,1,1,1,0.0
+260,Eddie Song.wav,-0.4,1,1,1,0.0
+34,Endless,1.1,1,1,1,0.0
+264,Enemy.wav,0.6,1,1,1,0.0

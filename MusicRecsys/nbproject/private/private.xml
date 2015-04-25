@@ -4,10 +4,14 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/bavaria/Main.java</file>
-            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/model/UtilityMatrix.java</file>
+            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/recommender/UtilityRow.java</file>
+            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/recommender/UtilityMatrix.java</file>
             <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/bavaria/Tracker.java</file>
+            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/model/SongInstance.java</file>
             <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/model/Recommendation.java</file>
+            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/recommender/Recommendation.java</file>
             <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/musicrecsys/MusicRecsys.java</file>
+            <file>file:/C:/Users/Lester%20Chong/Documents/NetBeansProjects/Thesis/MusicRecsys/src/recommender/SongInstance.java</file>
         </group>
     </open-files>
 </project-private>
