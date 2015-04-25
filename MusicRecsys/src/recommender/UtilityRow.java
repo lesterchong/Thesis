@@ -6,18 +6,35 @@
 
 package recommender;
 
-import java.sql.Timestamp;
+
 
 /**
  *
  * @author Lester Chong
  */
+
+/** 
+ * @file UtilityRow.java
+ * 
+ * @brief This file is the basic object for the utility matrix.
+ * 
+ **/ 
+
+/** 
+ * @class UtilityRow
+ * 
+ * @brief This class contains the methods for manipulating the values of an instance in the utility matrix.
+ * 
+ * This class contains the getters and setters for manipulating the values of an instance in the utility matrix.
+ * Attributes such as the id and name of the song, computed value for the play methods, boolean values if the instance has been played for the day, month, or at all, and if it has been skipped. 
+ * 
+ */ 
 public class UtilityRow {
     private int ID;
     private String name;
     private double playMethod;
     private int playedDay;
-    private int playedWeek;
+    private int playedMonth;
     private int playedEver;
     private double skipped;
 
@@ -64,17 +81,17 @@ public class UtilityRow {
     }
 
     /**
-     * @return the playedWeek
+     * @return the playedMonth
      */
-    public int getPlayedWeek() {
-        return playedWeek;
+    public int getPlayedMonth() {
+        return playedMonth;
     }
 
     /**
-     * @param playedWeek the playedWeek to set
+     * @param playedMonth the playedMonth to set
      */
-    public void setPlayedWeek(int playedWeek) {
-        this.playedWeek = playedWeek;
+    public void setPlayedMonth(int playedMonth) {
+        this.playedMonth = playedMonth;
     }
 
     /**

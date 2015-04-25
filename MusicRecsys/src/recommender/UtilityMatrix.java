@@ -21,6 +21,24 @@ import java.util.Scanner;
  *
  * @author Lester Chong
  */
+
+/** 
+ * @file UtilityMatrix.java
+ * 
+ * @brief This file contains the class for manipulating the utility matrix
+ * 
+ **/ 
+
+/** 
+ * @class UtilityMatrix
+ * 
+ * @brief Contains the methods for manipulating the utility matrix
+ * 
+ * This class contains various methods for manipulating the utility matrix.
+ * Methods such as parsing the userinfo.txt, storing the current matrix to UtilityMatrix.mrs, updating the current utility matrix, and selecting the 3 instances with the highest utility values.
+ */ 
+
+    
 public class UtilityMatrix {
     private static LinkedList<UtilityRow> matrix;
     private UtilityRow temp;
@@ -29,6 +47,14 @@ public class UtilityMatrix {
     private SimpleDateFormat sd;
     private Timestamp lastUsed = new Timestamp(0);
     
+    
+    /**
+    * @brief Constructor of the UtilityMatrix class
+    * 
+    * This constructor ensures that when UtilityMatrix class is instantiated, it will check if UtilityMatrix.mrs already exists. If it exists, it will set the values of playedDay and playedMonth to 0. If UtilityMatrix.mrs does not exists it will create one.
+    * After creating a new UtilityMatrix.mrs or reading an existing one, it then parses the user listening log and outputs a file named UtilityMatrix.mrs
+    * 
+    */
     public UtilityMatrix(){
         try{
             readFromFile();
@@ -42,6 +68,11 @@ public class UtilityMatrix {
         writeToFile();
     }
     
+    /**
+    * @brief Parses UtilityMatrix.mrs and stores it in memory. Returns true if parsing is successful.
+    * 
+    * This method parses UtilityMatrix.mrs and saves it in memory. Returns true if parsing is successful. Throws FileNotFoundException if UtilityMatrix.mrs does not exist.
+    */
     private boolean readFromFile() throws FileNotFoundException{
         int ctr=0;
         matrix = new LinkedList<>();
@@ -64,7 +95,7 @@ public class UtilityMatrix {
                     temp.setName(token[1]);
                     temp.setPlayMethod(Double.parseDouble(token[2]));
                     temp.setPlayedDay(Integer.parseInt(token[3]));
-                    temp.setPlayedWeek(Integer.parseInt(token[4]));
+                    temp.setPlayedMonth(Integer.parseInt(token[4]));
                     temp.setPlayedEver(Integer.parseInt(token[5]));
                     temp.setSkipped(Double.parseDouble(token[6]));
                     System.out.println(temp.getID());
@@ -74,6 +105,11 @@ public class UtilityMatrix {
         return true;
     }
     
+    /**
+    * @brief Writes the current utility matrix from memory to a file named UtilityMatrix.mrs
+    * 
+    * This method writes the utility matrix currently stored in memory to a file named UtilityMatrix.mrs.
+    */
     public void writeToFile(){
         File file = new File("data/UtilityMatrix.mrs");
         sd = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
@@ -100,7 +136,7 @@ public class UtilityMatrix {
                 bf.write(String.valueOf(matrix.get(ctr).getPlayMethod())+",");
                 bf.write(matrix.get(ctr).getPlayedDay()+",");
                 bf.write(matrix.get(ctr).getPlayedEver()+",");
-                bf.write(matrix.get(ctr).getPlayedWeek()+",");
+                bf.write(matrix.get(ctr).getPlayedMonth()+",");
                 bf.write(String.valueOf(matrix.get(ctr).getSkipped()));
                 bf.newLine();
             }
@@ -110,6 +146,11 @@ public class UtilityMatrix {
         }
     }
     
+    /**
+    * @brief Updates a row in the utility matrix
+    * 
+    * This method searches through the utility matrix and updates it accordingly.
+    */
     public void updateMatrix(UtilityRow row){
         for(int ctr=0; ctr<matrix.size(); ctr++){
             if(matrix.get(ctr).getName().equals(row.getName())){
@@ -118,6 +159,11 @@ public class UtilityMatrix {
         }
     }
     
+    /**
+    * @brief Returns a UtilityRow that matches the song name of the argument
+    * 
+    * This method searches for the corresponding UtilityRow that matches the song name of the argument. Returns null if a match was not found.
+    */
     public UtilityRow searchSongByName(UtilityRow item){
         for(int ctr = 0; ctr<matrix.size(); ctr++){
             if(matrix.get(ctr).getName().equals(item.getName())){
@@ -127,6 +173,11 @@ public class UtilityMatrix {
         return null;
     }
     
+    /**
+    * @brief Returns true if the instance exists in the matrix. Returns false otherwise.
+    * 
+    * This method searches if the instance already exists in the matrix using the instance name. Returns true if a match is found and false if there is no match.
+    */
     public boolean doesSongExist(UtilityRow item){
         for(int ctr = 0; ctr<matrix.size(); ctr++){
             if(matrix.get(ctr).getName().equals(item.getName())){
@@ -136,23 +187,28 @@ public class UtilityMatrix {
         return false;
     }
     
-    //returns corresponding double value based on the log
+    /**
+    * @brief Parses the play method from the user log. Returns corresponding value for each play method.
+    * 
+    * This method parses the string log to determine which kind of play method it is and returns the corresponding value of the play method. Returns 0 if an invalid string was found
+    */
     public double playMethodValue(String log){
+        double E=1;
         if(log.endsWith("MANUAL") || log.endsWith("REPEAT") || log.endsWith("PREVIOUS")){
-            return 1;
+            return E;
         }else if(log.endsWith("AUTOMATIC")){
-            return .5;
+            return E/2;
         }else if(log.endsWith("NEXT")){
-            return -.5;
+            return -E/2;
         }
         return 0;
     }
 
-    //Issue: Problem if user pauses. Pauses found. Problem now is how to get time paused. 
-    private double computeSkipped(long songSec){
-        return -(1/2);
-    }
-    
+    /**
+    * @brief Parses user_info.txt
+    * 
+    * This method parses user_info.txt and saves it in memory.
+    */
     public void parseUserInfo(){
         Timestamp currentEntry; 
         BufferedWriter bw;
@@ -174,7 +230,7 @@ public class UtilityMatrix {
                         temp.setName(token[1]);
                         temp.setPlayedDay(1);
                         temp.setPlayedEver(1);
-                        temp.setPlayedWeek(1);
+                        temp.setPlayedMonth(1);
 
                         if(doesSongExist(temp)==true){
                             temp = searchSongByName(temp);
@@ -196,7 +252,11 @@ public class UtilityMatrix {
         
     }
     
-    //Still need to be tested.
+    /**
+    * @brief Refreshes UtilityRow.playedDay if current date does not match the timestamp when the song was played.
+    * 
+    * This method refreshes UtilityRow.playedDay if current date does not match the timestamp when the song was played. Throws FileNotFoundException and NullPointerException if UtilityMatrix.mrs was not found.
+    */
     private void refreshDay() throws FileNotFoundException, NullPointerException{
         String line, token[];
         Scanner scan;
@@ -221,12 +281,19 @@ public class UtilityMatrix {
             
     }
     
-    private void refreshWeek(){
-        for(int ctr=0; ctr<matrix.size(); ctr++){
-            matrix.get(ctr).setPlayedWeek(0);
-        }
+    /**
+    * @brief Currently unimplemented. Supposed to refresh playedWeek. For future work. 
+    * 
+    * This method is supposed to refresh UtilityRow.playedWeek if current week does not match the week when the song was played. Throws UnsupportedOperationException as it currently does nothing.
+    */
+    private void refreshWeek() throws UnsupportedOperationException{
     }
     
+    /**
+    * @brief Refreshes UtilityRow.playedDay if current month does not match the month when the song was played.
+    * 
+    * This method Refreshes UtilityRow.playedDay if current month does not match the month when the song was played.
+    */
     private void refreshMonth(){
         int currentMonth=0, previousMonth=0;
         Scanner scan;
@@ -244,8 +311,7 @@ public class UtilityMatrix {
             
             if(currentMonth != previousMonth){
                 for(int ctr=0; ctr<matrix.size(); ctr++){
-                    //Tentative. Will be replaced with playedMonth if ever.
-                    matrix.get(ctr).setPlayedWeek(0);
+                    matrix.get(ctr).setPlayedMonth(0);
                 }
             }
         }catch(FileNotFoundException e){
@@ -253,7 +319,13 @@ public class UtilityMatrix {
         }
     }
     
-    //Returns top three instances that have the highest utility values
+    /**
+    * @brief Computes for 3 instances with the highest utility values
+    * 
+    * This method computes for 3 instances with the highest utility values.
+    * The method computes for the utility value 3 times, selecting the highest utility value each iteration. 
+    * Needs optimization for future work. 
+    */
     public LinkedList<UtilityRow> topThreeUtility(){
         LinkedList<UtilityRow> list = new LinkedList<>();
         double highestUtility, utilityValue;
@@ -264,7 +336,7 @@ public class UtilityMatrix {
             highestUtility=0;
             for(int ctr=0; ctr<matrix.size(); ctr++){
                 //Below is equation for computing utility value. method+(playedDay*.5)+(playedWeek*.5)-skipped
-                utilityValue = matrix.get(ctr).getPlayMethod()+(matrix.get(ctr).getPlayedDay()*.5)+(matrix.get(ctr).getPlayedWeek()*.5)+(matrix.get(ctr).getPlayedEver()*.5)-matrix.get(ctr).getSkipped();
+                utilityValue = matrix.get(ctr).getPlayMethod()+(matrix.get(ctr).getPlayedDay()*.5)+(matrix.get(ctr).getPlayedMonth()*.5)+(matrix.get(ctr).getPlayedEver()*.5)+matrix.get(ctr).getSkipped();
                 if(utilityValue > highestUtility){
                     highestUtility = utilityValue;
                     index = ctr;
@@ -277,10 +349,20 @@ public class UtilityMatrix {
         return list;
     }
     
+    /**
+    * @brief Returns utility matrix
+    * 
+    * This method returns the current utility matrix stored in memory
+    */
     public LinkedList<UtilityRow> getUtilityMatrix(){
         return matrix;
     }
     
+    /**
+    * @brief Assigns the song name to its correct ID
+    * 
+    * This method checks 'Song Name Database.txt' and reassigns the ID of UtilityRow.ID to its correct value from 'Song Name Database.txt'
+    */
     private void assignName(){
         String line;
         int ctr, ctr2=0;
@@ -302,7 +384,6 @@ public class UtilityMatrix {
             }
         }catch(FileNotFoundException e){
             e.printStackTrace();
-            System.out.println("Hindi Pasok");
         }
     }
 }
